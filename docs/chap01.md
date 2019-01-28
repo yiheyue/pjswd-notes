@@ -61,3 +61,81 @@ ECMAScript 就是对实现该标准规定的各个方面内容的语言的描述
   > 第五版新功能包括**原生 JSON 对象**、**继承的方法**和**高级属性定义**。还新增了严格模式。
 
 ### 文档对象模型（DOM）
+
+文档对象模型（DOM，Document Object Model）是用于 HTML 的应用程序编程接口（API，Application Programming Interface）。
+
+DOM 把整个页面映射成一个多层节点的结构。借助 DOM 提供的 API，开发人员可以很方便地增加、删除和修改任何一个节点。
+
+一个 HTML 页面对应 DOM 中节点的例子：
+
+**HTML**
+```html
+<html>
+  <head>
+    <title>Page title</title>
+  </head>
+  <body>
+    <p>Hello World!</p>
+  </body>
+</html>
+```
+
+**DOM**
+```
+html
+├── head
+│   └── title
+│       └── "Page title"
+│
+└── body
+    └── p
+        └── "Hello World!"
+```
+
+#### DOM 级别
+
+DOM1 级（DOM Level 1）于 1998 年 10 月成为 W3C 的推荐标准。
+
+- DOM1 级由两个模块组成：DOM 核心（DOM Core）和 DOM HTML
+
+    - DOM Core：规定如何映射基于 XML 的文档结构
+
+    - DOM HTML：在 DOM Core 的基础上加以扩展，添加了针对 HTML 的对象和方法
+
+DOM2 级（DOM Level 2）在原来的 DOM 的基础上又扩充了鼠标和用户界面事件、范围、遍历等细分模块。而且通过对象接口增加了对 CSS 的支持。
+
+- DOM2 级引入了新模块：DOM 视图（DOM Views）、DOM 事件（DOM Events）、DOM 样式（DOM Style）和 DOM 遍历和范围（DOM Traversal and Range）
+
+    - DOM Views：定义了跟踪不同文档视图的接口
+
+    - DOM Events：定义了事件和事件处理的接口
+
+    - DOM Style：定义了基于 CSS 为元素应用样式的接口
+
+    - DOM Traversal and Range：定义了遍历和操作文档树的接口
+
+DOM3 级（DOM Level 3）进一步扩展了 DOM。
+
+- DOM3 级引入了 DOM 加载和保存（DOM Load and Save）和 DOM 验证（DOM Validation）模块
+
+    - DOM Load and Save：定义了以统一方式加载和保存文档的方法
+
+    - DOM Validation：定义了验证文档的方法
+
+### 浏览器对象模型（BOM）
+
+浏览器对象模型（BOM，Browser Object Model）用于处理浏览器窗口和框架。但人们习惯上把所有针对浏览器的 JavaScript 扩展算作 BOM 的一部分。如下为扩展：
+
+- 弹出新浏览器窗口的功能
+
+- 移动、缩放和关闭浏览器窗口的功能
+
+- 提供浏览器详细信息的 navigator 对象
+
+- 提供浏览器所加载页面详细信息的 location 对象
+
+- 提供用户显示器分辨率详细信息的 screen 对象
+
+- 对 cookies 的支持
+
+- 像 XMLHttpRequest 和 IE 的 ActiveXOjbect 这样的自定义对象

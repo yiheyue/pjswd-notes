@@ -2,11 +2,11 @@
 
 《JavaScript高级程序设计 第三版》（Professional JavaScript for Web Developers 3rd Edition）阅读笔记
 
-> 目前阅读进度：0%
+> 目前阅读进度：1.29%
 
 ## 目录
 
-1. JavaScript 简介
+1. [JavaScript 简介](./docs/chap01.md)
 
 2. 在 HTML 中使用 JavaScript
 
