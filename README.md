@@ -8,7 +8,7 @@
 
 1. [JavaScript 简介](./docs/chap01.md)
 
-2. 在 HTML 中使用 JavaScript
+2. [在 HTML 中使用 JavaScript](./docs/chap02.md)
 
 3. 基本概念
 
