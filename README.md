@@ -2,7 +2,7 @@
 
 《JavaScript高级程序设计 第三版》（Professional JavaScript for Web Developers 3rd Edition）阅读笔记
 
-> 目前阅读进度：1.29%
+> 目前阅读进度：4%
 
 ## 目录
 
@@ -10,7 +10,7 @@
 
 2. [在 HTML 中使用 JavaScript](./docs/chap02.md)
 
-3. 基本概念
+3. [基本概念](./docs/chap03.md)
 
 4. 变量、作用域和内存问题
 
