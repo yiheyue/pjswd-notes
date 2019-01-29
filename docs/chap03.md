@@ -212,3 +212,67 @@ var msgBoolean = Boolean(message);
 ### Number 类型
 
 ECMAScript 使用 IEEE754 格式来表示整数和浮点数值。
+
+ECMAScript 保存浮点数需要的内存空间是整数的两倍，其中浮点数的最高精度是 17 位小数。
+
+- 整数和浮点数
+
+    ```js
+    var age = 18;           // 整数
+    
+    var price = 45.89;      // 浮点数
+
+    var lightSpeed = 2.9e8; // 290,000,000
+    ```
+
+- 数值范围
+
+    ```js
+    console.log(Number.MIN_VALUE);         // 5e-324
+
+    console.log(Number.MAX_VALUE);         // 1.7976931348623157e+308
+
+    console.log(Number.MIN_VALUE / 2);     // 0
+
+    console.log(Number.MAX_VALUE * 2);     // Infinity
+
+    console.log(-Number.MAX_VALUE * 2);    // -Infinity
+
+    console.log(Number.NEGATIVE_INFINITY); // -Infinity
+
+    console.log(Number.POSITIVE_INFINITY); // Infinity
+
+    /* 判断一个数是否为无穷，使用 isFinite() 函数 */
+
+    console.log(isFinite(239));                  // true
+
+    console.log(isFinite(Number.MAX_VALUE * 2)); // false
+    ```
+
+- `NaN` (Not a Number)
+
+    ```js
+    /* 任何涉及 NaN 的运算，返回值都是 NaN */
+
+    console.log(NaN + 1);    // NaN
+
+    console.log('blue' % 2); // NaN
+
+    /* NaN 与任何值都不相等 */
+
+    console.log(NaN == 3); // false
+
+    console.log(NaN == NaN); // false
+
+    /* 判断是否为 NaN，使用 isNaN() 函数 */
+
+    console.log(isNaN(NaN)); // true
+
+    console.log(isNaN(23));  // false
+    ```
+
+- 数值转化
+
+    ```js
+    /* 有三个函数可以将非数值转换成数值：Number() parseInt() parseFloat() */
+    ```
