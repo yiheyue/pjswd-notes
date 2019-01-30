@@ -413,3 +413,88 @@ Object 是所有对象的基础，因此所有的对象都拥有下列基本属�
 - `toString()`：返回对象的字符串表示
 
 - `valueOf()`：返回的对象的字符串、数值或布尔值表示
+
+## 操作符
+
+### 一元操作符
+
+- 递增递减操作符
+
+    ```js
+    // 前置和后置的区别
+    var num1 = 10;
+    console.log(num1-- + 10); // 20
+
+    var num2 = 10;
+    console.log(--num2 + 10); // 19
+    ```
+
+- 一元加减操作符
+
+    ```js
+    // 一元加减和数学上的定义一致，主要用于将正数变成负数
+    var num = 100;
+    console.log(-num); // -100
+    ```
+
+### 位操作符
+
+ECMAScript 中的值都是以 IEEE754 的 64 位格式存储的，但是位操作符不直接操作 64 位的值，而是先将 64 位的值转换成 32 位，然后执行操作，操作完成之后在将结果转换成 64 位。
+
+- 按位非（NOT）
+
+    ```js
+    var result = 25;
+    result = ~result;
+    console.log(result); // -26
+    ```
+
+- 按位与（AND）
+
+    ```js
+    var result = 25 & 3;
+    console.log(result); // 1
+    ```
+
+- 按位或（OR）
+
+    ```js
+    var result = 25 | 3;
+    console.log(result); // 27
+    ```
+
+- 按位异或（XOR）
+
+    ```js
+    var result = 25 ^ 3;
+    console.log(result); // 26
+    ```
+
+- 左移
+
+    ```js
+    var value = 2;
+    console.log(value << 5); // 64
+    ```
+
+- 有符号右移
+
+    ```js
+    var value = 64;
+    console.log(value >> 5); // 2
+    ```
+
+- 无符号右移
+
+    ```js
+    var value = 64;
+    console.log(value >>> 5); // 2
+    ```
+
+### 布尔操作符
+
+- 逻辑非
+
+- 逻辑与
+
+- 逻辑或
