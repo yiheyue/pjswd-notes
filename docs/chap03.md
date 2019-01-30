@@ -271,7 +271,7 @@ ECMAScript 保存浮点数需要的内存空间是整数的两倍，其中浮点
     console.log(isNaN(23));  // false
     ```
 
-- 数值转化
+- 数值转换
 
     ```js
     /* 有三个函数可以将非数值转换成数值：Number()、parseInt()、parseFloat()。转型函数 Number() 可以用于任何数据类型，parseInt() 和 parseFloat() 专门用于把字符串转换成数值 */
@@ -359,4 +359,32 @@ ECMAScript 保存浮点数需要的内存空间是整数的两倍，其中浮点
     // 转义序列只算一个字符
     var text = 'hello\n';
     console.log(text.length); // 6
+    ```
+
+- 字符串转换
+
+    ```js
+    /* 有两种方式可以将值转换成字符串：String() 和 toString() */
+
+    /*
+     * toString()
+     * 1. 几乎所有对象都有 toString() 方法，null 和 undefined 除外
+     * 2. 一般情况下，不需要给 toString() 传递参数，如果需要指定转换进制，可以给它传递一个参数
+     */
+    var done = true;
+    var age = 10;
+    console.log(done.toString());  // true
+    console.log(age.toString());   // 10
+    console.log(age.toString(2));  // 1010
+    console.log(age.toString(8));  // 12
+    console.log(age.toString(10)); // 10
+    console.log(age.toString(16)); // a
+
+    /*
+     * String() 可以适用于所有值，包括 null 和 undefined
+     */
+    console.log(String(null));      // null
+    console.log(String(undefined)); // undefined
+    console.log(String(12));        // 12
+    console.log(String(true));      // true
     ```
