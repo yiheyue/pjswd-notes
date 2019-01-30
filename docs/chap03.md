@@ -388,3 +388,28 @@ ECMAScript 保存浮点数需要的内存空间是整数的两倍，其中浮点
     console.log(String(12));        // 12
     console.log(String(true));      // true
     ```
+
+### Object 类型
+
+ECMAScript 中的对象是一组数据和功能的集合。
+
+```js
+// 实例化一个 Object 类型的对象，使用 new 关键字
+var obj = new Object();
+```
+
+Object 是所有对象的基础，因此所有的对象都拥有下列基本属性和方法：
+
+- `constructor()`：保存着用于创建当前对象的函数
+
+- `hasOwnProperty(propertyName)`：用于检查给定的属性在当前对象实例中是否存在
+
+- `isPrototypeOf(object)`：用于检查传入的对象是否是当前对象的原型
+
+- `propertyIsEnumerable(propertyName)`：用于检查给定的属性是否能够使用 `for-in` 语句来枚举
+
+- `toLocaleString()`：返回对象的字符串表示，该字符串与执行环境的地区对应
+
+- `toString()`：返回对象的字符串表示
+
+- `valueOf()`：返回的对象的字符串、数值或布尔值表示
