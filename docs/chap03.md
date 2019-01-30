@@ -495,6 +495,90 @@ ECMAScript 中的值都是以 IEEE754 的 64 位格式存储的，但是位操�
 
 - 逻辑非
 
+    ```js
+    console.log(!123);  // false
+    console.log(!true); // false
+    ```
+
 - 逻辑与
 
+    ```js
+    var result = true && false;
+    console.log(result); // false
+    ```
+
 - 逻辑或
+
+    ```js
+    var result = false || true;
+    console.log(result); // true
+
+    // 逻辑或还可以用来给变量赋值
+    var obj = preferredObj || backupObj;
+    ```
+
+### 乘性操作符
+
+- 乘法
+
+    ```js
+    var value = 10 * 10; // 100
+    ```
+
+- 除法
+
+    ```js
+    var value = 20 / 2; // 10
+    ```
+
+- 取模
+
+    ```js
+    var value = 20 % 3; // 2
+    ```
+
+### 加性操作符
+
+- 加法
+
+    ```js
+    var value = 12 + 1;          // 13
+
+    var message = 'hello' + 123; // hello123
+    ```
+
+- 减法
+
+    ```js
+    var value = 12 - 1; // 11
+    ```
+
+### 关系操作符
+
+- 大于（`>`）、小于（`<`）、不大于（`<=`）和不小于（`>=`）
+
+### 相等操作符
+
+- 相等（`==`）和不相等（`!=`）
+
+- 全等（`===`）和不全等（`!==`）
+
+### 条件操作符
+
+```js
+var value = boolean_expr ? true_value : false_value;
+```
+
+### 赋值操作符
+
+- 简单赋值（`=`）和复合赋值（`+=`、`-=`...）
+
+### 逗号操作符
+
+```js
+// 逗号操作符常用于声明多个变量
+var num1, num2, num3;
+
+// 用于赋值时，表达式的值等于最后一项
+var num = (4, 12, -4, 2, 1); // num 等于 1
+```
