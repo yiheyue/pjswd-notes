@@ -400,7 +400,7 @@ var obj = new Object();
 
 Object 是所有对象的基础，因此所有的对象都拥有下列基本属性和方法：
 
-- `constructor()`：保存着用于创建当前对象的函数
+- `constructor`：保存着用于创建当前对象的函数
 
 - `hasOwnProperty(propertyName)`：用于检查给定的属性在当前对象实例中是否存在
 
