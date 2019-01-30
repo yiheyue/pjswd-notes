@@ -582,3 +582,91 @@ var num1, num2, num3;
 // 用于赋值时，表达式的值等于最后一项
 var num = (4, 12, -4, 2, 1); // num 等于 1
 ```
+
+## 语句
+
+### `if` 语句
+
+```js
+// type 1
+if (cond) {
+  console.log('cond is true');
+}
+
+// type 2
+if (cond) {
+  console.log('cond is true');
+} else {
+  console.log('cond is false');
+}
+
+// type 3
+if (cond1) {
+  console.log('cond1 is true');
+} else if (cond2) {
+  console.log('cond1 is false && cond2 is true');
+} else {
+  console.log('cond1 is false && cond2 is false');
+}
+```
+
+### `do-while` 语句
+
+```js
+do {
+  // statement
+} while (expression);
+```
+
+### `while` 语句
+
+```js
+while (expression) {
+  // statement
+}
+```
+
+### `for` 语句
+
+```js
+for (initialization; expression; post_loop_expression) {
+  // statement
+}
+```
+
+### `for-in` 语句
+
+```js
+// 可以用来枚举对象的属性
+for (var propName in window) {
+  console.log(propName);
+}
+```
+
+### `label` 语句
+
+```js
+// start 为 label
+start: for (var i = 0; i < count; i++) {
+  console.log(i);
+}
+```
+
+### `break` 和 `continue`
+
+在循环中，`break` 可以立即退出循环，`continue` 则是退出当前循环，继续执行下次循环。
+
+### `switch` 语句
+
+```js
+switch (cond) {
+  case c1:
+    // statement
+    break;
+  case c2:
+    // statement
+    break;
+  default:
+    // statement
+}
+```
