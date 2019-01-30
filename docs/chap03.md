@@ -290,6 +290,40 @@ ECMAScript 保存浮点数需要的内存空间是整数的两倍，其中浮点
      *    e. 如果以上情况均不满足，则将其转换成 NaN
      * 6. 如果是 Object 值，则调用 valueOf() 方法，然后使用上述的方法转换。如果为 NaN，则继续调用对象的 toString() 方法，之后再使用上述的方法。
      */
+    console.log(Number('hello'));   // NaN
+    console.log(Number(''));        // 0
+    console.log(Number('123'));     // 123
+    console.log(Number(true));      // 1
+    console.log(Number(false));     // 0
+    console.log(Number(null));      // 0
+    console.log(Number(undefined)); // NaN
+
+    /*
+     * parseInt() 转换规则：看是否符合数值模式
+     */
+    console.log(parseInt(null));      // NaN
+    console.log(parseInt(undefined)); // NaN
+    console.log(parseInt('hi123'));   // NaN
+    console.log(parseInt('123hi'));   // 123
+    console.log(parseInt('123.123')); // 123
+    console.log(parseInt(''));        // NaN
+    // parseInt() 可以传入第二个参数，用于指定转换进制
+    console.log(parseInt('10', 2));  // 2
+    console.log(parseInt('10', 8));  // 8
+    console.log(parseInt('10', 10)); // 10
+    console.log(parseInt('10', 16)); // 16
+
+    /*
+     * parseFloat() 转换规则：
+     * 1. parseFloat() 只解析十进制
+     * 2. parseFloat() 只解析第一个小数点
+     */
+    console.log(parseFloat('12e3'));     // 12,000
+    console.log(parseFloat('0x12'));     // 0
+    console.log(parseFloat('16.26'));    // 16.26
+    console.log(parseFloat('16.26abc')); // 16.26
+    console.log(parseFloat('16.26.13')); // 16.26
+    console.log(parseFloat('hi'));       // NaN
     ```
 
 ### String 类型
@@ -316,7 +350,7 @@ ECMAScript 保存浮点数需要的内存空间是整数的两倍，其中浮点
     | `\\`     | 斜杠             |
     | `\'`     | 单引号           |
     | `\"`     | 双引号           |
-    | `\xnn`   | 一个字符          |
+    | `\xnn`   | 一个 ASCII 字符   |
     | `\unnnn` | 一个 Unicode 字符 |
 
 - 字符串长度
