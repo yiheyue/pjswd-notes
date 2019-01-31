@@ -148,3 +148,21 @@ var person = new Object();
     var length = colors.unshift('black', 'pink');
     console.log(length);    // 4
     ```
+
+- 数组的排序方法
+
+    - sort()：排序数组
+
+    - reverse()：反转数组的顺序
+
+- 数组操作方法
+
+## Date 类型
+
+## RegExp 类型
+
+## Function 类型
+
+## 基本包装类型
+
+## 单体内置对象
