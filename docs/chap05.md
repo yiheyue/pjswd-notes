@@ -48,3 +48,59 @@ var person = new Object();
     // 2. 使用方括号表示法
     console.log(person['age']); // 18
     ```
+
+## Array 类型
+
+- 创建 Array 类型的实例
+
+    ```js
+    // 1. 使用 new 操作符加 Array 构造函数
+    var colors = new Array();
+
+    // 2. 使用数组字面量
+    var scores = [98, 97, 99];
+    ```
+
+- 读取和访问数组的值
+
+    ```js
+    var colors = ['red', 'green', 'blue'];
+
+    console.log(colors[0]); // red
+
+    colors[1] = 'black';
+    console.log(colors[1]); // black
+
+    colors[2] = 'pink';
+    console.log(colors[2]); // pink
+    ```
+
+- 数组的 `length` 属性
+
+    ```js
+    // 数组的 length 属性不是只读
+    var colors = ['red', 'green', 'blue'];
+
+    console.log(colors.length); // 3
+
+    colors.length = 4;
+
+    console.log(colors.length); // 4
+    console.log(colors[3]);     // undefined
+    ```
+
+- 检测数组
+
+    ```js
+    var colors = ['red', 'green', 'blue'];
+
+    // 1. 使用 instanceof
+    if (colors instanceof Array) {
+      console.log('colors is array');
+    }
+
+    // 2. 使用 ES5 新增的 Array.isArray() 方法
+    if (Array.isArray(colors)) {
+      console.log('colors is array');
+    }
+    ```
