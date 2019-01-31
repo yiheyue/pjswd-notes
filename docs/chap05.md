@@ -104,3 +104,47 @@ var person = new Object();
       console.log('colors is array');
     }
     ```
+
+- 将数组转换成字符串
+
+    ```js
+    var colors = ['red', 'green', 'blue'];
+
+    // 使用 toString() 方法
+    console.log(colors.toString());  // red,green,blue
+
+    // 使用 join() 方法自定义拼接字符串
+    console.log(colors.join('-->')); // red-->green-->blue
+    ```
+
+- 数组的**栈方法**
+
+    栈是一种 **LIFO**（Last In First Out）的数据结构。ECMAScript 提供了两个方法来模拟栈的行为。
+
+    ```js
+    var colors = ['red', 'green', 'blue'];
+
+    // 1. push()：接收任意数量的参数，把它们逐个加入数组末尾，之后返回修改后的数组长度
+    var length = colors.push('black', 'pink');
+    console.log(length); // 5
+
+    // 2. pop()：移除数组末尾的一项，减少数组的 length 值，之后返回被移除的项
+    var lastItem = colors.pop();
+    console.log(lastItem);   // pink
+    ```
+
+- 数组的**队列方法**
+
+    队列是一种 **FIFO**（First In First Out）的数据结构。ECMAScript 提供了两个方法来模拟队列行为。
+
+    ```js
+    var colors = ['red', 'green', 'blue'];
+
+    // 1. shift()：移除数组的第一项，之后返回被移除的项
+    var firstItem = colors.shift();
+    console.log(firstItem); // red
+
+    // 2. unshift()：在数组最前端添加任意项，之后返回修改后的数组长度
+    var length = colors.unshift('black', 'pink');
+    console.log(length);    // 4
+    ```
