@@ -151,11 +151,61 @@ var person = new Object();
 
 - 数组的排序方法
 
-    - sort()：排序数组
+    - `sort()`：排序数组
 
-    - reverse()：反转数组的顺序
+    - `reverse()`：反转数组的顺序
 
-- 数组操作方法
+- 数组的操作方法
+
+    - `concat()`：拼接数组
+
+        ```js
+        var colors1 = ['red', 'green'];
+
+        // 1. 不传入参数，相当于复制一次，返回一个副本
+        var colors2 = colors1.concat();
+        console.log(colors2); // [ 'red', 'green' ]
+
+        // 2. 传入参数，则将参数拼接在数组后面
+        var colors3 = colors1.concat('blue', 'black', ['pink', 'white']);
+        console.log(colors3); // [ 'red', 'green', 'blue', 'black', 'pink', 'white' ]
+        ```
+
+    - `slice()`：剪切数组
+
+        ```js
+        // Index:       0      1        2       3        4
+        var colors1 = ['red', 'green', 'blue', 'black', 'white'];
+
+        // 1. 传入一个参数，这个参数将作为剪切的起始位置
+        var colors2 = colors1.slice(2);
+        console.log(colors2); // [ 'blue', 'black', 'white' ]
+
+        // 2. 传入两个参数，这两个参数将分别作为剪切的起始位置和终点位置（不包括终点位置的项）
+        var colors3 = colors1.slice(1, 3);
+        console.log(colors3); // [ 'green', 'blue' ]
+        ```
+
+    - `splice()`：多功能
+
+        ```js
+        var colors = ['red', 'green', 'blue'];
+
+        // 1. 删除
+        var removed = colors.splice(0, 2); // 第一个参数为起始位置，第二个参数为删除的项数
+        console.log(colors);  // [ 'blue' ]
+        console.log(removed); // [ 'red', 'green' ]
+
+        // 2. 插入
+        removed = colors.splice(1, 0, 'black'); // 第三个参数为插入的项
+        console.log(colors);  // [ 'blue', 'black' ]
+        console.log(removed); // []
+
+        // 3. 替换
+        removed = colors.splice(1, 1, 'white');
+        console.log(colors);  // [ 'blue', 'white' ]
+        console.log(removed); // [ 'black' ]
+        ```
 
 ## Date 类型
 
