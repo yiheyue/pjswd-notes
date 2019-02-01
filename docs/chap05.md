@@ -371,6 +371,78 @@ console.log('Execution Time' + (end - start) + 'ms');
 
 ## RegExp 类型
 
+ECMAScript 通过 RegExp 类型来支持正则表达式。语法格式如下：
+
+```
+var expression = / pattern / flags
+```
+
+- pattern：模式，该部分可以是任何简单或是复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用
+
+- flags：标志部分用于标明正则表达式的行为，可以有一个或多个。
+
+正则表达式的匹配模式支持以下 3 个标志：
+
+- `g`：即 `global`，表明匹配所有的字符串
+
+- `i`：即 `case-insensitive`，表明忽略大小写
+
+- `m`：即 `multiline`，表明匹配多行
+
+与其他语言中的正则表达式类似，模式中使用的所有**元字符**都必须转义，正则表达式的元字符有：
+
+```
+(   [   {   \   $   *   +
+)   ]   }   ^   |   ?   .
+```
+
+- 创建一个正则表达式
+
+    ```js
+    // 1. 使用字面量的方式
+    var pattern1 = /[bc]at/i;
+
+    // 2. 使用构造函数的方式
+    var pattern2 = new RegExp('[bc]at', 'i');
+    ```
+
+- RegExp 实例的属性
+
+    - `global`：布尔值，表示是否设置了 `g` 标志
+
+    - `ignoreCase`：布尔值，表示是否设置了 `i` 标志
+
+    - `lastIndex`：整数，表示匹配项的字符位置
+
+    - `multiline`：布尔值，表示是否设置了 `m` 标志
+
+    - `source`：正则表达式的字符串表示
+
+- RegExp 实例的方法
+
+    - `exec()`：接收一个字符串，然后返回包含第一个匹配项信息的数组
+
+        ```js
+        var message = 'Hello, my name is John!';
+        var pattern = /hello/i;
+
+        var matches = pattern.exec(message);
+        console.log(matches); // [ 'Hello', index: 0, input: 'Hello, my name is John!' ]
+        ```
+
+    - `test()`：接收一个字符串，如果模式匹配则返回 true，否则返回 false
+
+        ```js
+        var text = '0000-00-0000';
+        var pattern = /\d{3}-\d{2}-\d{4}/;
+
+        if (pattern.test(text)) {
+          console.log('The pattern was matched');
+        }
+        ```
+
+- RegExp 构造函数属性
+
 ## Function 类型
 
 ## 基本包装类型
