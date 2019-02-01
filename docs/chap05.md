@@ -443,6 +443,39 @@ var expression = / pattern / flags
 
 - RegExp 构造函数属性
 
+RegExp 构造函数包含一些属性（在 Java 中称为静态属性）。这些属性适用于作用域中的所有表达式，并且基于所执行的最近一次正则表达式操作而变化。
+
+有两种方式可以访问 RegExp 构造函数的属性：通过长属性名或短属性名
+
+| 长属性名        | 短属性名   | 说明                               |
+| -------------- | -------- | --------------------------------- |
+| `input`        | `$_`     | 最近一次要匹配的字符串                |
+| `lastMatch`    | `$&`     | 最近一次的匹配项                     |
+| `lastParen`    | `$+`     | 最近一次的捕获组                     |
+| `leftContext`  | `` $` `` | input 字符串中 lastMatch 之前的文本  |
+| `multiline`    | `$*`     | 布尔值，表示是否所有表达式都使用多行模式 |
+| `rightContext` | `$'`     | input 字符串中 lastMatch 之前的文本  |
+
+- ECMAScript 正则表达式还不支持的特性
+
+    - 匹配字符串开始和结尾的 `\A` 和 `\Z`锚
+
+    - 向后查找（lookbehind）
+
+    - 并集和交集类
+
+    - 原子组（atomic grouping）
+
+    - Unicode 支持
+
+    - 命名的捕获组
+
+    - `s`（single，单行） 和 `x`（free-spacing，无间隔）匹配模式
+
+    - 条件匹配
+
+    - 正则表达式注释
+
 ## Function 类型
 
 ## 基本包装类型
