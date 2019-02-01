@@ -327,6 +327,48 @@ var person = new Object();
 
 ## Date 类型
 
+Date 类型使用 UTC 1970 年 1 月 1 日 0 时 开始经过的毫秒数来保存日期。
+
+获取当前日期和时间：
+
+```js
+var now = new Date();
+console.log(now); // Fri Feb 01 2019 11:44:47 GMT+0800 (China Standard Time)
+```
+
+`Date()` 可以接收一个参数（从 UTC 1970 年 1 月 1 日 0 时 开始起，经过的毫秒数），并返回对应的日期。
+
+```js
+var date = new Date(1000000);
+console.log(date); // Thu Jan 01 1970 08:16:40 GMT+0800 (China Standard Time)
+```
+
+Date 类型提供了两个函数用于简化上述的方式：
+
+- `Date.parse()`：接收一个字符串作为参数，返回一个日期对象
+
+- `Date.UTC()`：接收一系列时间参数，返回一个日期对象
+
+ECMAScript 5 添加了 `Date.now()` 方法，这个方法返回调用这个方法时的日期和时间的毫秒数。
+
+```js
+var start = Date.now();
+
+// dosomething ...
+
+console.log('Execution Time' + (end - start) + 'ms');
+```
+
+- Date 类型的日期格式化方法
+
+    | 方法名                  | 作用                      |
+    | ---------------------- | ------------------------ |
+    | `toDateString()`       | 显示 星期几、月、日和年      |
+    | `toTimeString()`       | 显示 时 分 秒和时区         |
+    | `toLocaleDateString()` | 显示地区的 星期几、月、日和年 |
+    | `toLocaleTimeString()` | 显示 时 分 秒              |
+    | `toUTCString()`        | 显示格式完整的 UTC 日期     |
+
 ## RegExp 类型
 
 ## Function 类型
