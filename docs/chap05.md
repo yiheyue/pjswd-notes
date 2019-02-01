@@ -478,6 +478,52 @@ RegExp 构造函数包含一些属性（在 Java 中称为静态属性）。这�
 
 ## Function 类型
 
+在 ECMAScript 中，函数实际上是对象。每个函数都是 Function 类型的实例，而且一样具有属性和方法。函数名实际上是一个指向函数对象的指针，不会与某个函数绑定。故 ECMAScript 中没有函数重载的概念。
+
+定义函数的 3 种方式：
+
+```js
+// 1. 函数声明
+function sum(num1, num2) {
+  return num1 + num2;
+}
+
+// 2. 函数表达式
+var sum = function(num1, num2) {
+  return num1 + num2;
+};
+
+// 3. Function 构造函数
+var sum = new Funtion('num1', 'num2', 'return num1 + num2');
+```
+
+- 函数声明和函数表达式
+
+    函数声明和函数表达式并不是一致的，解析器会先读取函数声明，使其能在任何代码之前都能使用。对于函数表达式，必须等到解析器执行到其所在位置，才会被解释执行。
+
+- 作为值的函数
+
+    因为 ECMAScript 中的函数名本身就是变量，所以函数也可以作为值来使用。即可以将函数作为参数传递给另一个函数，也可以将函数作为另一个函数的结果返回。
+
+- 函数内部的特殊对象
+
+    - `arguments`：它是一个类数组对象，包含传入函数中的所有参数。这个对象还有一个 `callee` 的属性，该属性是一个指针，指向拥有这个 `arguments` 对象的函数
+
+        ```js
+        // 利用 callee 解除函数耦合
+        function factorial(num) {
+          if (num <= 1) {
+            return 1;
+          } else {
+            return num * arguments.callee(num - 1);
+          }
+        }
+        ```
+
+        > ES5 还规范了另一个函数对象的属性：`caller`。这个属性保存着调用当前函数的函数的引用。
+
+    - `this`：`this` 引用的是函数执行的环境对象。由于在调用函数前，`this` 的值并不确定，因此 `this` 可能会在代码执行过程中引用不同的对象
+
 ## 基本包装类型
 
 ## 单体内置对象
