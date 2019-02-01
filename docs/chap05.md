@@ -207,6 +207,124 @@ var person = new Object();
         console.log(removed); // [ 'black' ]
         ```
 
+- 数组的位置方法
+
+    - `indexOf()`：从前往后查找，找到返回位置，未找到返回 -1
+
+        ```js
+        // Index:   0   1    2     3   4   5  6
+        var nums = [12, 134, -120, 29, 87, 0, -2];
+
+        var index = nums.indexOf(-2); // 6
+        console.log(index);
+        
+        index = nums.indexOf(-12);    // -1
+        console.log(index);
+        ```
+
+    - `lastIndexOf()`：从后往前查找，找到返回位置，未找到返回 -1
+
+        ```js
+        // Index:   0   1    2     3   4   5  6
+        var nums = [12, 134, -120, 29, 87, 0, -2];
+
+        var index = nums.lastIndexOf(-2); // 6
+        console.log(index);
+
+        index = nums.lastIndexOf(100);    // -1
+        console.log(index);
+        ```
+
+- 数组的迭代方法
+
+    - `every()`：若数组的每一项都返回 true，则返回 true
+
+        ```js
+        var nums = [10, 20, 30, 40];
+
+        var everyResult = nums.every(function(item, index, array) {
+          var result = item > 10;
+          return result;
+        });
+
+        console.log(everyResult); // false
+        ```
+
+    - `some()`：若数组的任意一项返回 true，则返回 true
+
+        ```js
+        var nums = [10, 20, 30, 40];
+
+        var someResult = nums.some(function(item, index, array) {
+          var result = item > 30;
+          return result;
+        });
+
+        console.log(someResult); // true
+        ```
+
+    - `filter()`：返回结果为 true 的项的数组集合
+
+        ```js
+        var nums = [10, 20, 30, 40];
+
+        var filterResult = nums.filter(function(item, index, array) {
+          var result = item > 20;
+          return result;
+        });
+
+        console.log(filterResult); // [ 30, 40 ]
+        ```
+
+    - `map()`：返回函数调用后的每一项
+
+        ```js
+        var nums = [10, 20, 30, 40];
+
+        var mapResult = nums.map(function(item, index, array) {
+          var result = item * 2;
+          return result;
+        });
+
+        console.log(mapResult); // [ 20, 40, 60, 80 ]
+        ```
+
+    - `forEach()`：没有返回值，相当于使用 for 循环迭代每一项
+
+        ```js
+        var nums = [10, 20, 30, 40];
+
+        nums.forEach(function(item, index, array) {
+          // statement
+        });
+        ```
+
+- 数组的归并方法
+
+    - `reduce()`：从数组的第一项开始，一直迭代到数组的最后一项，最后返回一个值
+
+        ```js
+        var nums = [10, 20, 30];
+
+        var result = nums.reduce(function(prev, cur, index, array) {
+          return prev + cur;
+        });
+
+        console.log(result); // 60
+        ```
+
+    - `reduceRight()`：从数组的最后一项开始，一直迭代到数组的第一项，最后返回一个值
+
+        ```js
+        var nums = [10, 20, 30];
+
+        var result = nums.reduceRight(function(prev, cur, index, array) {
+          return prev + cur;
+        });
+
+        console.log(result); // 60
+        ```
+
 ## Date 类型
 
 ## RegExp 类型
