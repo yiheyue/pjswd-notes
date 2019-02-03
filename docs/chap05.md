@@ -524,6 +524,24 @@ var sum = new Funtion('num1', 'num2', 'return num1 + num2');
 
     - `this`：`this` 引用的是函数执行的环境对象。由于在调用函数前，`this` 的值并不确定，因此 `this` 可能会在代码执行过程中引用不同的对象
 
+- 函数的属性和方法
+
+    - `length` 和 `prototype` 属性
+
+        - `length`：表示函数希望接收的命名参数的个数
+
+        - `prototype`：保存引用类型的所有实例方法
+
+    - `apply()`、`call()` 和 `bind()`
+
+        - `apply()`：设置函数体内 `this` 对象的值
+
+        - `call()`：设置函数体内 `this` 对象的值
+
+        - `bind()`：ES5 新增，创建一个函数的实例，其 `this` 值会被绑定到传给 `bind()` 函数的值
+
+        > `apply()` 和 `call()` 的区别在于传递参数不同
+
 ## 基本包装类型
 
 ## 单体内置对象
