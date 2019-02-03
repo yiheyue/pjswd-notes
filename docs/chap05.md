@@ -544,4 +544,53 @@ var sum = new Funtion('num1', 'num2', 'return num1 + num2');
 
 ## 基本包装类型
 
+ECMAScript 提供了 3 个特殊的引用类型用以便利地操作基本类型值：Boolean、Number、String。一般不推荐使用这 3 个引用类型创建相应的实例。
+
+使用 `new` 调用基本包装类型的构造函数，与直接调用同名的转型函数是不一样的。
+
+```js
+var value = '25';
+var number = Number(value);
+console.log(typeof number); // number
+
+var obj = new Number(value);
+console.log(typeof obj);    // object
+```
+
+- Boolean 类型
+
+    - 创建一个 Boolean 对象
+
+        ```js
+        var booleanObject = new Boolean(true);
+        ```
+
+- Number 类型
+
+    - 创建一个 Number 对象
+
+        ```js
+        var numberObject = new Number(10);
+        ```
+
+    - 将数字格式化为字符串
+
+        ```js
+        // toFixed()
+        var num1 = 10.005;
+        console.log(num1.toFixed(2));       // '10.01'
+
+        // toExponential()
+        var num2 = 10;
+        console.log(num2.toExponential(1)); // '1.0e+1'
+
+        // toPrecision()
+        var num3 = 99;
+        console.log(num3.toPrecision(1));   // '1e+2'
+        console.log(num3.toPrecision(2));   // '99'
+        console.log(num3.toPrecision(3));   // '99.0'
+        ```
+
+- String 类型
+
 ## 单体内置对象
