@@ -593,4 +593,50 @@ console.log(typeof obj);    // object
 
 - String 类型
 
+    - 创建一个 String 对象
+
+        ```js
+        var stringObject = new String('hello world');
+        ```
+
+    - String 类型的实例都有一个 `length` 属性
+
+        ```js
+        var str = 'hello world';
+        console.log(str.length); // 11
+        ```
+
+    - String 类型的字符方法
+
+        ```js
+        var str = 'hello world';
+
+        // 1. charAt()
+        console.log(str.charAt(1));      // e
+
+        // 2. charCodeAt()
+        console.log(str.charCodeAt(1));  // 101
+
+        // 3. stringValue()
+        console.log(str.stringValue[1]); // e
+        ```
+
+    - 字符串操作方法
+
+        - `concat()`：拼接字符串
+
+            ```js
+            var str = 'hello ';
+            var result = str.concat('world');
+            console.log(result); // hello world
+
+            // concat() 可以接收多个参数
+            result = str.concat('world', '!');
+            console.log(result); // hello world!
+
+            // 更多情况下，一般使用 + 号来拼接字符串
+            result = str + 'world' + '!';
+            console.log(result); // hello world!
+            ```
+
 ## 单体内置对象
