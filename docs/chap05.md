@@ -639,4 +639,53 @@ console.log(typeof obj);    // object
             console.log(result); // hello world!
             ```
 
+        - `slice()`：基于参数返回一个子字符串
+
+        - `substr()`：基于参数返回一个子字符串
+
+        - `substring()`：基于参数返回一个子字符串
+
+            ```js
+            var str = 'hello world';
+
+            console.log(str.slice(3));        // lo world
+            console.log(str.substring(3));    // lo world
+            console.log(str.substr(3));       // lo world
+
+            console.log(str.slice(3, 7));     // lo w
+            console.log(str.substring(3, 7)); // lo w
+            console.log(str.substr(3, 7));    // lo worl
+            ```
+
+    - 字符串位置方法
+
+        - `indexOf()` 和 `lastIndexOf()`
+
+            ```js
+            var str = 'hello world';
+            console.log(str.indexOf('o'));     // 4
+            console.log(str.lastIndexOf('o')); // 7
+            ```
+
+    - 清除字符串的前置和后缀空格
+
+        ```js
+        var str = '         hello world    ';
+        var trimmedStr = str.trim();
+        console.log(trimmedStr); // hello world
+        ```
+
+    - 字符串大小写转换方法
+
+        ```js
+        var str = 'Hello World';
+        
+        console.log(str.toUpperCase());       // HELLO WORLD
+        console.log(str.toLocaleUpperCase()); // HELLO WORLD
+        console.log(str.toLowerCase());       // hello world
+        console.log(str.toLocaleLowerCase()); // hello world
+        ```
+
+    - 字符串的模式匹配方法
+
 ## 单体内置对象
