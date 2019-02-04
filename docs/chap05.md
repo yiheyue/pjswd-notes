@@ -688,4 +688,54 @@ console.log(typeof obj);    // object
 
     - 字符串的模式匹配方法
 
+        - `match()`
+
+            ```js
+            var text = 'cat bat sat fat';
+            var pattern = /.at/;
+
+            var matches = text.match(pattern);
+            console.log(matches); // [ 'cat', index: 0, input: 'cat bat sat fat' ]
+            ```
+
+        - `search()`
+
+            ```js
+            var text = 'cat bat sat fat';
+            var pos = text.search(/at/);
+            console.log(pos); // 1
+            ```
+
+        - `replace()`
+
+            ```js
+            var text = 'cat, bat, sat, fat';
+
+            var result = text.replace('at', 'ond');
+            console.log(result); // cond, bat, sat, fat
+
+            result = text.replace(/at/g, 'ond');
+            console.log(result); // cond, bond, sond, fond
+            ```
+
+        - `split()`
+
+            ```js
+            var text = 'red,blue,green,yellow';
+            var split1 = text.split(',');
+            console.log(split1); // ['red', 'blue', 'green', 'yellow']
+
+            var split2 = text.split(',', 2);
+            console.log(split2); // ['red', 'blue']
+            ```
+
+    - String 构造函数的静态方法
+
+        - `fromCharCode()`
+
+            ```js
+            var str = String.fromCharCode(104, 101, 108, 108, 111);
+            console.log(str); // hello
+            ```
+
 ## 单体内置对象
