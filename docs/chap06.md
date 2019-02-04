@@ -106,3 +106,72 @@ ECMAScript 中有两种属性：数据属性和访问器属性。
     ```
 
     > 本例中的 `_year` 属性前的下划线是一种常见的记号，用于表示只能通过对象方法访问的属性。
+
+### 定义多个属性
+
+ES5 还定义了一个 `Object.defineProperties()` 方法用于同时为对象定义多个属性。
+
+```js
+var book = {};
+
+Object.defineProperties(book, {
+  _year: {
+    writable: true,
+    value: 2004
+  },
+
+  edition: {
+    writable: true,
+    value: 1
+  },
+
+  year: {
+    get: function() {
+      return this._year;
+    },
+
+    set: function(newValue) {
+      if (newValue > 2004) {
+        this._year = newValue;
+        this.edition += newValue - 2004;
+      }
+    }
+  }
+});
+```
+
+### 读取属性的特性
+
+使用 ES5 定义的 `Object.getOwnPropertyDescriptor()` 方法可以取得给定属性的描述符。
+
+```js
+var book = {};
+
+Object.defineProperties(book, {
+  _year: {
+    writable: true,
+    value: 2004
+  },
+
+  edition: {
+    writable: true,
+    value: 1
+  },
+
+  year: {
+    get: function() {
+      return this._year;
+    },
+
+    set: function(newValue) {
+      if (newValue > 2004) {
+        this._year = newValue;
+        this.edition += newValue - 2004;
+      }
+    }
+  }
+});
+
+var descriptor = Object.getOwnPropertyDescriptor(book, '_year');
+console.log(descriptor.writable); // true
+```
