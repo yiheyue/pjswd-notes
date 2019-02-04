@@ -231,3 +231,30 @@ var person2 = new Person('Snow', 20, 'Doctor');
 3. 执行构造函数中的代码（为新对象添加属性）
 
 4. 返回新对象
+
+#### 构造函数和普通函数
+
+构造函数和普通函数的唯一区别，在于调用它们的方式不同。任何函数，只要通过 `new` 操作符来调用，那它就可以作为构造函数；任何函数，如果不通过 `new` 操作符来调用，那它就和普通函数没有两样。
+
+### 原型模式
+
+每个函数都有一个 `prototype` 属性，这个属性是一个指针，指向一个对象。而这个对象，简单来说，就是创建 Person 实例时，新创建的对象。
+
+```js
+function Person() {}
+
+Person.prototype.name = 'John';
+Person.prototype.age = 18;
+Person.prototype.job = 'Doctor';
+Person.prototype.sayName = function() {
+  console.log(this.name);
+};
+
+var person1 = new Person();
+var person2 = new Person();
+
+person1.sayName(); // John
+person2.sayName(); // John
+```
+
+新对象的属性和方法是由所有实例共享的，即 `person1` 和 `person2` 访问的都是同一组属性和同一个 `sayName()` 方法。
