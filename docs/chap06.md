@@ -175,3 +175,31 @@ Object.defineProperties(book, {
 var descriptor = Object.getOwnPropertyDescriptor(book, '_year');
 console.log(descriptor.writable); // true
 ```
+
+## 创建对象
+
+使用 Object 构造函数和对象字面量的方式创建对象会产生大量的代码冗余。采取下列方法可以避免冗余的产生。
+
+### 工厂模式
+
+工厂模式是软件工程领域一种广为人知的设计模式，这种模式抽象了创建具体对象的过程。因为 ECMAScript 中无法创建类，开发人员就发明了一种函数，用函数来封装以特定接口创建对象的细节。
+
+```js
+function createPerson(name, age, job) {
+  var o = new Object();
+  o.name = name;
+  o.age = age;
+  o.job = job;
+  o.sayName = function() {
+    console.log(this.name);
+  }
+  return o;
+}
+
+var person1 = createPerson('John', 18, 'Software Engineer');
+var person2 = createPerson('Snow', 20, 'Doctor');
+```
+
+工厂模式解决了创建多个相似对象的问题，但是没有解决对象识别问题（即怎样知道一个对象的类型）。
+
+### 构造函数模式
