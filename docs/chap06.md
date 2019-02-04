@@ -55,4 +55,54 @@ ECMAScript 中有两种属性：数据属性和访问器属性。
 
     - `[[Value]]`：包含这个属性的数据值
 
+    要修改属性默认的特性，必须使用 ES5 的 `Object.defineProperty()` 方法。这个方法接受 3 个参数：属性所在的对象、属性的名字和一个描述符对象。这个描述符对象的属性必须是：`configurable`、`enumerable`、`writable` 和 `value`。
+
+    ```js
+    Object.defineProperty(person, 'name', {
+      writable: false,
+      value: 'John'
+    });
+
+    console.log(person.name); // John
+    person.name = 'Tom';
+    console.log(person.name); // John
+    ```
+
 2. 访问器属性
+
+    访问器属性不包含数据值，但包含一对 getter 和 setter 函数。访问器属性有如下 4 个特性：
+
+    - `[[Configurable]]`：表示能否通过 `delete` 删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为数据属性
+    
+    - `[[Enumerable]]`：表示能否通过 `for-in` 循环返回属性
+
+    - `[[Get]]`：在读取属性时调用的函数（默认值为 `undefined`）
+
+    - `[[Set]]`：在设置属性时调用的函数（默认值为 `undefined`）
+
+    访问器属性不能直接定义，必须使用 `Object.defineProperty()` 方法来定义。
+
+    ```js
+    var book = {
+      _year: 2004,
+      edition: 1
+    };
+
+    Object.defineProperty(book, 'year', {
+      get: function() {
+        return this._year;
+      },
+
+      set: function(newValue) {
+        if (newValue > 2004) {
+          this._year = newValue;
+          this.edition += newValue - 2004;
+        }
+      }
+    });
+
+    book.year = 2005;
+    console.log(book.edition); // 2
+    ```
+
+    > 本例中的 `_year` 属性前的下划线是一种常见的记号，用于表示只能通过对象方法访问的属性。
