@@ -739,3 +739,143 @@ console.log(typeof obj);    // object
             ```
 
 ## 单体内置对象
+
+内置对象的定义：由 ECMAScript 实现提供的、不依赖于宿主环境的对象，这些对象在 ECMAScript 程序执行之前就已经存在了。例如 Object、Array 和 String。
+
+ECMA-262 还定义了 2 个单体内置对象：Global 和 Math。
+
+### Global 对象
+
+不属于任何其他对象的属性和方法，最终都是 Global 对象的属性和方法。事实上，没有全局变量和全局函数：所有在全局作用域定义的属性和函数，都是 Global 对象的属性。
+
+1. URI 编码方法
+
+    ```js
+    var uri = 'http://www.wrox.com/illegal value.htm#start';
+
+    console.log(encodeURI(uri));          // http://www.wrox.com/illegal%20value.htm#start
+    console.log(encodeURIComponent(uri)); // http%3A%2F%2Fwww.wrox.com%2Fillegal%20value.htm%23start
+
+    uri = 'http%3A%2F%2Fwww.wrox.com%2Fillegal%20value.htm%23start';
+
+    console.log(decodeURI(uri));          // http%3A%2F%2Fwww.wrox.com%2Fillegal value.htm%23start
+    console.log(decodeURIComponent(uri)); // http://www.wrox.com/illegal value.htm#start
+    ```
+
+    > URI 即统一资源标识符，英文全称 Uniform Resource Identifiers
+
+2. `eval()` 方法
+
+    该方法相当于一个解析器，用于将传入的字符串参数作为 JavaScript 代码来执行。
+
+    ```js
+    var msg = 'hello world';
+    eval('console.log(msg)'); // hello world
+    ```
+
+3. Global 对象的属性
+
+    | 属性              | 说明                   |
+    | ---------------- | --------------------- |
+    | `undefined`      | 特殊值 undefined        |
+    | `NaN`            | 特殊值 NaN              |
+    | `Infinity`       | 特殊值 Infinity         |
+    | `Object`         | 构造函数 Object         |
+    | `Array`          | 构造函数 Array          |
+    | `Function`       | 构造函数 Function       |
+    | `Boolean`        | 构造函数 Boolean        |
+    | `String`         | 构造函数 String         |
+    | `Number`         | 构造函数 Number         |
+    | `Date`           | 构造函数 Date           |
+    | `RegExp`         | 构造函数 RegExp         |
+    | `Error`          | 构造函数 Error          |
+    | `EvalError`      | 构造函数 EvalError      |
+    | `RangeError`     | 构造函数 RangeError     |
+    | `ReferenceError` | 构造函数 ReferenceError |
+    | `SyntaxError`    | 构造函数 SyntaxError    |
+    | `TypeError`      | 构造函数 TypeError      |
+    | `URIError`       | 构造函数 URIError       |
+
+4. `window` 对象
+
+    ECMAScript 虽然没有指出如何直接访问 Global 对象，但 Web 浏览器都是将这个全局对象作为 `window` 对象的一部分加以实现的。因此，在全局作用域声明的所有变量和函数，都成为了 `window` 对象的属性。
+
+### Math 对象
+
+ECMAScript 提供了一个 Math 对象用以保存数学公式和信息。
+
+1. Math 对象的属性
+
+    | 属性            | 说明               |
+    | -------------- | ----------------- |
+    | `Math.E`       | 常量 e             |
+    | `Math.LN10`    | 10 的自然对数       |
+    | `Math.LN2`     | 2 的自然对数        |
+    | `Math.LOG2E`   | 以 2 为底 e 的对数  |
+    | `Math.LOG10E`  | 以 10 为底 e 的对数 |
+    | `Math.PI`      | 常量 PI            |
+    | `Math.SQRT1_2` | 1/2 的平方根        |
+    | `Math.SQRT2`   | 2 的平方根          |
+
+2. Math 对象的方法
+
+    - `Math.min()` 和 `Math.max()`
+
+        ```js
+        var max = Math.max(3, 54, 32, 16);
+        console.log(max); // 54
+
+        var min = Math.min(3, 54, 32, 16);
+        console.log(min); // 3
+        ```
+
+    - `Math.ceil()`、`Math.floor()` 和 `Math.round()`
+
+        ```js
+        // 向上取整数
+        console.log(Math.ceil(25.9)); // 26
+        console.log(Math.ceil(25.5)); // 26
+        console.log(Math.ceil(25.1)); // 26
+
+        // 向上取整数
+        console.log(Math.floor(25.9)); // 25
+        console.log(Math.floor(25.5)); // 25
+        console.log(Math.floor(25.1)); // 25
+
+        // 数学上的四舍五入
+        console.log(Math.round(25.9)); // 26
+        console.log(Math.round(25.5)); // 26
+        console.log(Math.round(25.1)); // 25
+        ```
+
+    - `Math.random()`
+
+        `Math.random()` 方法会返回一个大于等于 0 小于 1 的随机数。
+
+        ```js
+        function selectFrom(lowerValue, upperValue) {
+          var choices = upperValue - lowerValue + 1;
+          var result = Math.floor(Math.random() * choices + lowerValue);
+          return result;
+        }
+
+        var num = selectFrom(2, 10);
+        console.log(num); // 7
+        ```
+
+    - 其他数学方法
+
+        | 方法                    | 说明                   |
+        | ---------------------- | ---------------------- |
+        | `Math.abs(num)`        | 返回 num 的绝对值        |
+        | `Math.exp(num)`        | 返回 Math.E 的 num 次幂  |
+        | `Math.log(num)`        | 返回 num 的自然对数       |
+        | `Math.pow(num, power)` | 返回 num 的 power 次幂   |
+        | `Math.sqrt(num)`       | 返回 num 的平方根        |
+        | `Math.acos(x)`         | 返回 x 的反余弦值        |
+        | `Math.asin(x)`         | 返回 x 的反正弦值        |
+        | `Math.atan(x)`         | 返回 x 的反正切值        |
+        | `Math.atan2(y, x)`     | 返回 y/x 的反正切值      |
+        | `Math.cos(x)`          | 返回 x 的余弦值          |
+        | `Math.sin(x)`          | 返回 x 的正弦值          |
+        | `Math.tan(x)`          | 返回 x 的正切值          |
