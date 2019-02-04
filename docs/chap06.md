@@ -203,3 +203,31 @@ var person2 = createPerson('Snow', 20, 'Doctor');
 工厂模式解决了创建多个相似对象的问题，但是没有解决对象识别问题（即怎样知道一个对象的类型）。
 
 ### 构造函数模式
+
+自定义一个构造函数：
+
+```js
+function Person(name, age, job) {
+  this.name = name;
+  this.age = age;
+  this.job = job;
+  this.sayName = function() {
+    console.log(this.name);
+  };
+}
+
+var person1 = new Person('John', 18, 'Software Engineer');
+var person2 = new Person('Snow', 20, 'Doctor');
+```
+
+> `person1` 和 `person2` 都有一个 `constructor` 属性，该属性指向 `Person`。
+
+使用 `new` 操作符创建 `Person` 的新实例，会经历以下 4 个步骤：
+
+1. 创建一个新对象
+
+2. 将构造函数的作用域赋给新对象（因此 `this` 指向了这个对象）
+
+3. 执行构造函数中的代码（为新对象添加属性）
+
+4. 返回新对象
