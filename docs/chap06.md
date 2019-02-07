@@ -258,3 +258,35 @@ person2.sayName(); // John
 ```
 
 新对象的属性和方法是由所有实例共享的，即 `person1` 和 `person2` 访问的都是同一组属性和同一个 `sayName()` 方法。
+
+原型对象和实例对象之间的关系可以通过使用原型对象的 `isPrototypeOf()` 方法来确定。例如：
+
+```js
+console.log(Person.prototype.isPrototypeOf(person1)); // true
+console.log(Person.prototype.isPrototypeOf(person2)); // true
+```
+
+ES5 提供的 `Object.getPrototypeOf()` 方法返回 `[[Prototype]]` 的值。
+
+```js
+console.log(Object.getPrototypeOf(person1) == Person.prototype); // true
+```
+
+当代码访问某个对象的某个属性时，先从对象实例本身开始搜索，如果找到了则返回这个属性，如果没找到则搜索指针指向的原型对象，在原型对象上找。
+
+虽然可以通过对象实例访问保存在原型中的值，但不能通过对象实例重写原型中的值，即如果在实例对象中添加了一个和原型对象重名的属性，则被添加的属性将覆盖原型对象中的属性。
+
+```js
+function Person() {
+}
+
+Person.prototype.name = 'John';
+Person.prototype.age = 18;
+
+var person1 = new Person();
+var person2 = new Person();
+
+person1.name = 'Snow';
+console.log(person1.name); // Snow
+console.log(person2.name); // John
+```
