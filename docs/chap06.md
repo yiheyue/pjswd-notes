@@ -406,3 +406,37 @@ Person.prototype = {
   }
 };
 ```
+
+## 继承
+
+大多数面向对象语言都支持两种继承方式：接口继承和实现继承。接口继承只继承方法签名，实现继承则继承实际的方法。
+
+由于 ECMAScript 中的函数没有签名，所以无法实现接口继承。所以 ECMAScript 只支持实现继承。实现继承主要靠原型链。
+
+### 原型链
+
+ECMAScript 的原型链的基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。
+
+```js
+function SuperType() {
+  this.property = true;
+}
+
+SuperType.prototype.getSuperValue = function() {
+  return this.property;
+};
+
+function SubType() {
+  this.subproperty = false;
+}
+
+/* 此处 SubType 继承了 SuperType */
+SubType.prototype = new SuperType();
+
+SubType.prototype.getSubValue = function() {
+  return this.subproperty;
+};
+
+var instance = new SubType();
+console.log(instance.getSuperValue()); // true
+```
