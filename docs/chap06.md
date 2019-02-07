@@ -440,3 +440,31 @@ SubType.prototype.getSubValue = function() {
 var instance = new SubType();
 console.log(instance.getSuperValue()); // true
 ```
+
+- 默认的原型
+
+    所有原型链的起点都是 Object 的原型对象。所以上述的例子原型链如下：
+
+    ```
+    Object.prototype ---> SuperType.prototype ---> SubType.prototype
+    ```
+
+- 确定原型和实例的关系
+
+    有 2 种方式可以确定原型和实例之间的关系：
+
+    1. 使用 `instanceof` 关键字
+
+        ```js
+        console.log(instance instanceof Object);    // true
+        console.log(instance instanceof SuperType); // true
+        console.log(instance instanceof SubType);   // true
+        ```
+
+    2. 使用 `isPrototypeOf()` 方法
+
+        ```js
+        console.log(Object.prototype.isPrototypeOf(instance));    // true
+        console.log(SuperType.prototype.isPrototypeOf(instance)); // true
+        console.log(SubType.prototype.isPrototypeOf(instance));   // true
+        ```
