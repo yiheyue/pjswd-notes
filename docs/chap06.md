@@ -290,3 +290,82 @@ person1.name = 'Snow';
 console.log(person1.name); // Snow
 console.log(person2.name); // John
 ```
+
+如果要删除实例对象中的属性，恢复对原型对象属性的连接，可以使用 `delete` 关键字。
+
+```js
+function Person() {
+}
+
+Person.prototype.name = 'John';
+Person.prototype.age = 18;
+
+var person1 = new Person();
+var person2 = new Person();
+
+person1.name = 'Snow';
+console.log(person1.name); // Snow
+console.log(person2.name); // John
+
+delete person1.name;
+console.log(person1.name); // John
+```
+
+- 判断属性是否存在于对象实例中
+
+    使用 `hasOwnProperty()` 方法可以判断给定属性是否存在于对象实例中，只有当给定的属性是对象实例中的属性时，该函数返回 `true`。
+
+    ```js
+    function Person() {}
+
+    Person.prototype.name = 'John';
+
+    var person1 = new Person();
+    var person2 = new Person();
+
+    person1.name = 'Snow';
+    console.log(person1.hasOwnProperty('name')); // true
+    console.log(person2.hasOwnProperty('name')); // false
+    ```
+
+- 使用简单的方法构造原型
+
+    使用一个包含所有属性和方法的对象字面量来重写整个原型对象。例如：
+
+    ```js
+    function Person() {}
+
+    Person.prototype = {
+      name: 'John',
+      age: 18,
+      job: 'Doctor',
+      sayName: function() {
+        console.log(this.name);
+      }
+    };
+    ```
+
+    使用这个方法会产生一个副作用，就是 `constructor` 属性不再指向 `Person` 了（指向 `Object` 构造函数）。
+
+    ```js
+    var person = new Person();
+
+    console.log(person instanceof Object); // true
+    console.log(person instanceof Person); // false
+    ```
+
+    如果需要 `constructor` 属性，可以特意设置它。
+
+    ```js
+    function Person() {}
+
+    Person.prototype = {
+      constructor: Person,
+      name: 'John',
+      age: 18,
+      job: 'Doctor',
+      sayName: function() {
+        console.log(this.name);
+      }
+    };
+    ```
