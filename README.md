@@ -20,7 +20,7 @@
 
 7. [函数表达式](./docs/chap07.md)
 
-8. BOM
+8. [BOM](./docs/chap08.md)
 
 9. 客户端检测
 
