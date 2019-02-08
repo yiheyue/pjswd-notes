@@ -509,3 +509,29 @@ console.log(instance2.colors); // red, blue, green
     console.log(instance.name); // 'John'
     console.log(instance.age);  // 18
     ```
+
+### 组合继承
+
+组合继承（或伪经典继承）指的是将原型链和借用构造函数的技术组合到一块。
+
+```js
+function SuperType(name) {
+  this.name = name;
+  this.colors = ['red', 'blue', 'green'];
+}
+
+SuperType.prototype.sayName = function() {
+  console.log(this.name);
+};
+
+function SubType(name, age) {
+  SuperType.call(this, name);
+  this.age = age;
+}
+
+SubType.prototype = new SuperType();
+SubType.prototype.constructor = SubType;
+SubType.prototype.sayAge = function() {
+  console.log(this.age);
+};
+```
