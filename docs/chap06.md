@@ -468,3 +468,44 @@ console.log(instance.getSuperValue()); // true
         console.log(SuperType.prototype.isPrototypeOf(instance)); // true
         console.log(SubType.prototype.isPrototypeOf(instance));   // true
         ```
+
+### 借用构造函数
+
+这种方法的基本思想是：在子类型的构造函数的内部调用超类型的构造函数。
+
+```js
+function SuperType() {
+  this.colors = ['red', 'blue', 'green'];
+}
+
+function SubType() {
+  /* 此处 SubType 继承了 SuperType */
+  SuperType().call(this);
+}
+
+var instance1 = new SubType();
+instance1.colors.push('black');
+console.log(instance1.colors); // red, blue, green, black
+
+var instance2 = new SubType();
+console.log(instance2.colors); // red, blue, green
+```
+
+- 传递参数
+
+    使用借用构造函数的方式，可以在子类型构造函数中向超类型构造函数传递参数。
+
+    ```js
+    function SuperType(name) {
+      this.name = name;
+    }
+
+    function SubType() {
+      SuperType.call(this, 'John');
+      this.age = 18;
+    }
+
+    var instance = new SubType();
+    console.log(instance.name); // 'John'
+    console.log(instance.age);  // 18
+    ```
