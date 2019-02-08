@@ -103,3 +103,43 @@ JavaScript 中没有块级作用域的概念。不过开发人员可以用匿名
   
 })();
 ```
+
+## 私有变量
+
+我们把有权访问私有变量和私有函数的公有方法成为特权函数（privileged function）。利用私有和特权成员，可以隐藏那些不应该被直接修改的数据，例如：
+
+```js
+function Person(name) {
+  this.getName = function() {
+    return name;
+  };
+
+  this.setName = function(newName) {
+    name = newName;
+  }
+}
+```
+
+由于构造函数有一个缺点：针对每个实例都会创建同样一组新方法，而使用静态私有变量可以避免这个问题。
+
+## 静态私有变量
+
+```js
+(function() {
+
+  var name = '';
+
+  Person = function(newName) {
+    name = newName;
+  };
+
+  Person.prototype.getName = function() {
+    return name;
+  };
+
+  Person.prototype.setName = function(newName) {
+    name = newName;
+  };
+  
+})();
+```
