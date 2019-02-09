@@ -59,3 +59,11 @@ window.moveTo(200, 300);
 // 将窗口向左移动 50 像素
 window.moveBy(-50, 0);
 ```
+
+## location 对象
+
+## navigator 对象
+
+## screen 对象
+
+## history 对象

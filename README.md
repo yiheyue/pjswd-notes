@@ -22,7 +22,7 @@
 
 8. [BOM](./docs/chap08.md)
 
-9. 客户端检测
+9. [客户端检测](./docs/chap09.md)
 
 10. DOM
 
