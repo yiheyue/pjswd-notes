@@ -106,6 +106,50 @@ window.open('https://www.baidu.com/', '_self');
 
 > 第二个参数可以是 `_self`、`_parent`、`_top` 或 `_blank`。
 
+## 间歇调用和超时调用
+
+- 超时调用
+
+    超时调用会在指定时间后执行代码。超时调用需要使用 `window` 对象的 `setTimeout()` 方法。
+
+    ```js
+    // 2 秒后输出 'I am late' 字符串
+    setTimeout(function() {
+      console.log('I am late.');
+    }, 2000);
+    ```
+
+    `setTimeout()` 方法会返回一个超时调用 ID，可以使用它来取消超时调用。如果要取消超时调用，则需要使用 `clearTimeout()` 方法。
+
+    ```js
+    var timeoutId = setTimeout(function() {
+      console.log('cancel');
+    }, 2000);
+
+    clearTimeout(timeoutId);
+    ```
+
+- 间歇调用
+
+    间歇调用会按照指定的时间间隔重复执行代码，直到间歇调用被取消或者页面被卸载。间歇调用需要使用 `setInterval()` 方法。
+
+    ```js
+    // 每隔 2 秒输出 'interval...' 字符串
+    setInterval(function() {
+      console.log('interval...');
+    }, 2000);
+    ```
+
+    `setInterval()` 方法会返回一个间歇调用 ID，可以使用它来取消间歇调用。如果要取消间歇调用，则需要使用 `clearInterval()` 方法。
+
+    ```js
+    var intervalId = setInterval(function() {
+      console.log('hello');
+    }, 2000);
+    
+    clearInterval(intervalId);
+    ```
+
 ## location 对象
 
 ## navigator 对象
