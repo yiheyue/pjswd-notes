@@ -60,6 +60,40 @@ window.moveTo(200, 300);
 window.moveBy(-50, 0);
 ```
 
+### 窗口大小
+
+取得页面视口大小。
+
+```js
+var pageWidth = window.innerWidth;
+var pageHeight = window.innerHeight;
+
+if (typeof pageWidth != 'number') {
+  if (document.compatMode == 'CSS1Compat') {
+    pageWidth = document.documentElement.clientWidth;
+    pageHeight = document.documentElement.clientHeight;
+  } else {
+    pageWidth = document.body.clientWidth;
+    pageHeight = document.body.clientHeight;
+  }
+}
+```
+
+调整浏览器窗口的大小。
+
+> 以下方法在默认情况下可能被浏览器禁用。
+
+```js
+// 调整到 100 * 100
+window.resizeTo(100, 100);
+
+// 调整到 200 * 150
+window.resizeBy(100, 50);
+
+// 调整到 300 * 300
+window.resizeTo(300, 300);
+```
+
 ## location 对象
 
 ## navigator 对象
