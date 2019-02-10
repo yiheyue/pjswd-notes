@@ -182,6 +182,21 @@ window.open('https://www.baidu.com/', '_self');
 
 ## location 对象
 
+location 对象提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能。而且，location 既是 window 对象的属性，又是 document 对象的属性。
+
+下列是 location 对象的属性：
+
+| 属性名    | 例子                  | 说明                |
+| -------- | -------------------- | ------------------ |
+| hash     | `#contents`          | 返回 URL 中的 hash   |
+| host     | `www.abc.com:80`     | 返回服务器名称和端口号 |
+| hostname | `www.abc.com`        | 返回服务器名称        |
+| href     | `http://www.abc.com` | 返回完整的 URL       |
+| pathname | `/def/x.txt/`        | 返回 URL 的路径      |
+| port     | `80`                 | 返回 URL 指定的端口号 |
+| protocol | `http:`              | 返回页面使用的协议     |
+| search   | `?q=content`         | 返回 URL 的查询字符串 |
+
 ## navigator 对象
 
 ## screen 对象
