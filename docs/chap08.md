@@ -150,6 +150,36 @@ window.open('https://www.baidu.com/', '_self');
     clearInterval(intervalId);
     ```
 
+### 系统对话框
+
+- `alert()`
+
+    警告对话框，一般用于提示用户。
+
+    ```js
+    alert('Please close this page.');
+    ```
+
+- `confirm()`
+
+    确认对话框，一般用于询问用户是否确认。
+
+    ```js
+    confirm('Are you sure?');
+    ```
+
+- `prompt()`
+
+    提示对话框，一般用于获取一些简单的用户信息。
+
+    ```js
+    prompt('What is your name?', 'John');
+    ```
+
+- `window.print()` - 打印对话框
+
+- `window.find()` - 查找对话框
+
 ## location 对象
 
 ## navigator 对象
