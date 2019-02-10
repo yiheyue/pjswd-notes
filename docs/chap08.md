@@ -106,7 +106,7 @@ window.open('https://www.baidu.com/', '_self');
 
 > 第二个参数可以是 `_self`、`_parent`、`_top` 或 `_blank`。
 
-## 间歇调用和超时调用
+### 间歇调用和超时调用
 
 - 超时调用
 
@@ -176,9 +176,9 @@ window.open('https://www.baidu.com/', '_self');
     prompt('What is your name?', 'John');
     ```
 
-- `window.print()` - 打印对话框
+- `window.print()` - “打印”对话框
 
-- `window.find()` - 查找对话框
+- `window.find()` - “查找”对话框
 
 ## location 对象
 
