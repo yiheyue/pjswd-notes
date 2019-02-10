@@ -94,6 +94,18 @@ window.resizeBy(100, 50);
 window.resizeTo(300, 300);
 ```
 
+### 导航和打开窗口
+
+使用 `window.open()` 可以导航到一个特定的 URL，或者打开一个新的窗口。
+
+使用上述的方法打开百度页面：
+
+```js
+window.open('https://www.baidu.com/', '_self');
+```
+
+> 第二个参数可以是 `_self`、`_parent`、`_top` 或 `_blank`。
+
 ## location 对象
 
 ## navigator 对象
