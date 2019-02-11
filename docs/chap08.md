@@ -227,6 +227,29 @@ function getQueryStringArgs() {
 }
 ```
 
+### 操作 location 对象
+
+- `assign()`：打开一个新的 URL
+
+    ```js
+    location.assign('https://www.github.com');
+    ```
+
+- `replace()`：打开一个新的 URL，但是后退按钮被禁用
+
+    ```js
+    setTimeout(function() {
+      location.replace('https://www.github.com');
+    }, 2000);
+    ```
+
+- `reload()`：重新加载页面
+
+    ```js
+    location.reload();     // 重新加载（有可能从缓存中加载）
+    location.reload(true); // 重新加载（从服务器重新加载）
+    ```
+
 ## navigator 对象
 
 ## screen 对象
