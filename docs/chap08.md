@@ -202,3 +202,28 @@ location 对象提供了与当前窗口中加载的文档有关的信息，还�
 ## screen 对象
 
 ## history 对象
+
+history 对象保存着用户上网的浏览记录。
+
+- 使用 `history.go()` 方法跳转页面
+
+    ```js
+    // 向前跳转 1 页
+    history.go(1);
+
+    // 向前跳转 2 页
+    history.go(2);
+
+    // 向后跳转 1 页
+    history.go(-1);
+    ```
+
+- `history.back()` 和 `history.forward()`
+
+    ```js
+    // 向后跳转 1 页
+    history.back();
+
+    // 向前跳转 1 页
+    history.forward();
+    ```
