@@ -197,6 +197,36 @@ location 对象提供了与当前窗口中加载的文档有关的信息，还�
 | protocol | `http:`              | 返回页面使用的协议     |
 | search   | `?q=content`         | 返回 URL 的查询字符串 |
 
+### 获取查询字符串的参数
+
+[源代码和注释](../code/query_str.js)
+
+```js
+function getQueryStringArgs() {
+  var qs = location.search.length > 0
+    ? location.search.substring(1)
+    : '';
+  var args = {};
+  var items = qs.length ? qs.split('&') : [];
+  var item = null;
+  var name = null;
+  var value = null;
+  var i = 0;
+  var len = items.length;
+
+  for (i = 0; i < len; i++) {
+    item = item[i].split('=');
+    name = decodeURIComponent(item[0]);
+    value = decodeURIComponent(item[1]);
+
+    if (name.length) {
+      args[name] = value;
+    }
+  }
+  return args;
+}
+```
+
 ## navigator 对象
 
 ## screen 对象
