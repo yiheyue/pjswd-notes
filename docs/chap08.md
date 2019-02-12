@@ -252,6 +252,22 @@ function getQueryStringArgs() {
 
 ## navigator 对象
 
+navigator 对象可用于识别客户端浏览器。
+
+下表是 navigator 对象常用的属性：
+
+| 属性 | 说明 |
+| -------- | ---- |
+| appCodeName   | 浏览器的名称，通常是 Mozilla |
+| appName       | 完整的浏览器名称            |
+| appVersion    | 浏览器的版本                |
+| cookieEnabled | 表示 cookie 是否启动        |
+| javaEnabled   | 表示当前浏览器是否启动了 java |
+| language      | 浏览器的主语言              |
+| platform      | 浏览器所在的系统平台         |
+| plugins       | 浏览器中安装的插件信息的数组  |
+| userAgent     | 浏览器的用户代理字符串       |
+
 ## screen 对象
 
 screen 对象基本上只用于表明客户端的能力。
