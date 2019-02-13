@@ -162,8 +162,20 @@ HTTP 规范（包括 1.0 和 1.1 版）明确规定，浏览器应该发送简�
 
 6. Konqueror
 
-    Konqueror 是一款 Linux 平台的 Web 浏览器。Konqueror 3.5 的用户代理字符串如下：
+    Konqueror 是一款 Linux 平台的 Web 浏览器。
+
+    Konqueror 3.5 的用户代理字符串如下：
 
     ```
     Mozilla/5.0 (compatible; Konqueror/3.5; SunOS) KHTML/3.5.0 (like Gecko)
+    ```
+
+7. Chrome
+
+    Chrome 是 Google 公司的一款基于 WebKit 呈现引擎的 Web 浏览器。
+
+    Chrome 7 的用户代理字符串格式如下：
+
+    ```
+    Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7
     ```
