@@ -143,3 +143,19 @@ HTTP 规范（包括 1.0 和 1.1 版）明确规定，浏览器应该发送简�
     ```
     Mozilla/5.0 (Windows NT 6.1; rv:2.0.1) Gecko/20100101 Firefox 4.0.1
     ```
+
+5. WebKit
+
+    2003 年，Apple 公司宣布要开发自己的 Web 浏览器，名字为 Safari。Safari 的呈现引擎为 WebKit。WebKit 是 Linux 平台中 Konqueror 浏览器中的呈现引擎 KHTML 的一个分支。几年之后，WebKit 成为一个独立的开源项目。
+
+    Safari 1.0 的用户代理字符串如下：
+
+    ```
+    Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/124 (KHTML, like Gecko) Safari/125.1
+    ```
+
+    Safari 3.0 的用户代理字符串如下：
+
+    ```
+    Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/522.15.5 (KHTML, like Gecko) Version 3.0.3 Safari/522.15.5
+    ```
