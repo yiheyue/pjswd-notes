@@ -24,7 +24,7 @@
 
 9. [客户端检测](./docs/chap09.md)
 
-10. DOM
+10. [DOM](./docs/chap10.md)
 
 11. DOM 扩展
 
