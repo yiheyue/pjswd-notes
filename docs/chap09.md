@@ -179,3 +179,25 @@ HTTP 规范（包括 1.0 和 1.1 版）明确规定，浏览器应该发送简�
     ```
     Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7
     ```
+
+8. Opera
+
+    Opera 是 Opera Software ASA 公司的一款 Web 浏览器。
+
+    Opera 7.54 的用户代理字符串格式如下：
+
+    ```
+    Opera/7.54 (Windows NT 5.1; U) [en]
+    ```
+
+    Opera 8.0 的用户代理字符串格式如下：
+
+    ```
+    Opera/8.0 (Windows NT 5.1; U; en)
+    ```
+
+    Opera 10.63 的用户代理字符串格式如下：
+
+    ```
+    Opera/9.8 (Windows NT 6.1; U; en) Presto/2.6.30 Version/10.63
+    ```
