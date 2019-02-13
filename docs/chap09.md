@@ -92,3 +92,46 @@ HTTP 规范（包括 1.0 和 1.1 版）明确规定，浏览器应该发送简�
     Mozilla/2.0 (compatible; MSIE 3.03; Windows 95)
     ```
 
+3. Netscape Communicator 4 和 IE4~IE9
+
+    1997 年 8 月，Netscape Communicator 4 发布（这一版将浏览器的名称从 Netscape Navigator 改成了 Netscape Communicator），且继续遵循之前的用户代理字符串格式：
+
+    ```
+    Mozilla/版本号 (平台; 加密类型 [; 操作系统或 CPU 说明])
+    ```
+
+    例如，运行在 Windows 98 上的 Netscape Communicator 4 的用户代理字符串如下：
+
+    ```
+    Mozilla/4.0 (Win98; I)
+    ```
+
+    而微软在发布 IE4 时，将其用户代理字符串修改成如下格式：
+
+    ```
+    Mozilla/4.0 (compatible; MSIE 版本号; 操作系统)
+    ```
+
+    例如，运行在 Windows 98 上的 IE4 的用户代理字符串如下：
+
+    ```
+    Mozilla/4.0 (compatible; MSIE 4.0; Windows 98)
+    ```
+
+    IE7 时的用户代理字符串格式如下：
+
+    ```
+    Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)
+    ```
+
+    IE8 时的用户代理字符串（添加了呈现引擎的版本号）格式如下：
+
+    ```
+    Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+    ```
+
+    IE9 时的用户代理字符串格式如下：
+
+    ```
+    Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
+    ```
