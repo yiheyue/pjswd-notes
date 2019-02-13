@@ -135,3 +135,11 @@ HTTP 规范（包括 1.0 和 1.1 版）明确规定，浏览器应该发送简�
     ```
     Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
     ```
+
+4. Gecko
+
+    Gecko 是 Firefox 的呈现引擎。Firefox 4 的用户代理字符串如下：
+
+    ```
+    Mozilla/5.0 (Windows NT 6.1; rv:2.0.1) Gecko/20100101 Firefox 4.0.1
+    ```
