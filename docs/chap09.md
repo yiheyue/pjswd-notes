@@ -63,3 +63,32 @@ HTTP 规范（包括 1.0 和 1.1 版）明确规定，浏览器应该发送简�
     ```
 
     上述的用户代理字符串表示浏览器是 Netscape Navigator 2.02，为法语国家编译，运行在 Windows NT 平台上，加密类型为 40 位。
+
+2. Netscape Navigator 3 和 Internet Explorer 3
+
+    1996 年，Netscape Navigator 3 发布，随即超越 Mosaic 成为当时最为流行的 Web 浏览器。Netscape Navigator 3 同时小幅度的修改了用户代理字符串：删除了语言标记，允许添加操作系统或系统使用的 CPU 等可选信息。格式如下：
+
+    ```
+    Mozilla/版本号 (平台; 加密类型 [; 操作系统或 CPU 说明])
+    ```
+
+    典型的 Netscape Navigator 3 的用户代理字符串如下所示：
+
+    ```
+    Mozilla/3.0 (Win95; U)
+    ```
+
+    上述的用户代理字符串表示浏览器是 Netscape Navigator 3.0，运行在 Windows 95 下，加密类型为 128 位。
+
+    Netscape Navigator 3 发布后不久，微软也发布其第一款 Web 浏览器，即 Internet Explorer 3。IE3 的用户代理字符串的格式如下：
+
+    ```
+    Mozilla/2.0 (compatible; MSIE 版本号; 操作系统)
+    ```
+
+    例如运行在 Windows 95 上的 IE3.02 的用户代理字符串如下所示：
+
+    ```
+    Mozilla/2.0 (compatible; MSIE 3.03; Windows 95)
+    ```
+
