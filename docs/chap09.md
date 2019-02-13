@@ -159,3 +159,11 @@ HTTP 规范（包括 1.0 和 1.1 版）明确规定，浏览器应该发送简�
     ```
     Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/522.15.5 (KHTML, like Gecko) Version 3.0.3 Safari/522.15.5
     ```
+
+6. Konqueror
+
+    Konqueror 是一款 Linux 平台的 Web 浏览器。Konqueror 3.5 的用户代理字符串如下：
+
+    ```
+    Mozilla/5.0 (compatible; Konqueror/3.5; SunOS) KHTML/3.5.0 (like Gecko)
+    ```
