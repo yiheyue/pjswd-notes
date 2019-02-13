@@ -201,3 +201,43 @@ HTTP 规范（包括 1.0 和 1.1 版）明确规定，浏览器应该发送简�
     ```
     Opera/9.8 (Windows NT 6.1; U; en) Presto/2.6.30 Version/10.63
     ```
+
+9. iOS 和 Android
+
+    移动平台的 iOS 和 Android 的默认浏览器呈现引擎都基于 WebKit。所以它们的用户代理字符串类似与桌面平台的用户代理字符串。
+
+    例如，iOS 的用户代理字符串如下：
+
+    ```
+    Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-US) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16
+    ```
+
+    Android 的用户代理字符串如下：
+
+    ```
+    Mozilla/5.0 (Linux; U; Android 2.2; en-US; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
+    ```
+
+总结表格如下：
+
+| 浏览器名称 | 典型的用户代理字符串 |
+| -------- | ----------------- |
+| Mosaic | Mosaic/0.9 |
+| Netscape Navigator 2 | Mozilla/2.0 [Fr] (WinNT; I) |
+| Netscape Navigator 3 | Mozilla/3.0 (Win95; U) |
+| Internet Explorer 3 | Mozilla/2.0 (compatible; MSIE 3.0; Windows 95) |
+| Netscape Communicator 4 | Mozilla/4.0 (Win98; I) |
+| Internet Explorer 4 | Mozilla/4.0 (compatible; MSIE 4.0; Windows 98) |
+| Internet Explorer 7 | Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1) |
+| Internet Explorer 8 | Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0) |
+| Internet Explorer 9 | Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0) |
+| Firefox 4 | Mozilla/5.0 (Windows NT 6.1; rv:2.0.1) Gecko/20100101 Firefox 4.0.1 |
+| Safari 1.0 | Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/124 (KHTML, like Gecko) Safari/125.1 |
+| Safari 3.0 | Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/522.15.5 (KHTML, like Gecko) Version 3.0.3 Safari/522.15.5 |
+| Konqueror 3.5 | Mozilla/5.0 (compatible; Konqueror/3.5; SunOS) KHTML/3.5.0 (like Gecko) |
+| Chrome 7 | Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7 |
+| Opera 7.54 | Opera/7.54 (Windows NT 5.1; U) [en] |
+| Opera 8.0 | Opera/8.0 (Windows NT 5.1; U; en) |
+| Opera 10.63 | Opera/9.8 (Windows NT 6.1; U; en) Presto/2.6.30 Version/10.63 |
+| iOS | Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-US) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16 |
+| Android | Mozilla/5.0 (Linux; U; Android 2.2; en-US; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 |
