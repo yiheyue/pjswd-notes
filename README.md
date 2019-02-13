@@ -2,7 +2,7 @@
 
 《JavaScript高级程序设计 第三版》（Professional JavaScript for Web Developers 3rd Edition）阅读笔记
 
-> 目前阅读进度：27.43%
+> 目前阅读进度：30.86%
 
 ## 目录
 
