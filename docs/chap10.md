@@ -45,29 +45,29 @@ DOM1 级定义了一个 Node 接口，该接口由 DOM 中其他所有节点类�
 
 每个节点都有一个 `nodeType` 属性，用于表明节点的类型。节点类型由在 Node 类型中定义的 12 个数值常量来表示：
 
-- `Node.ELEMENT_NODE`
+- `Node.ELEMENT_NODE` - (1)
 
-- `Node.ATTRIBUTE_NODE`
+- `Node.ATTRIBUTE_NODE` - (2)
 
-- `Node.TEXT_NODE`
+- `Node.TEXT_NODE` - (3)
 
-- `Node.CDATA_SECTION_NODE`
+- `Node.CDATA_SECTION_NODE` - (4)
 
-- `Node.ENTITY_REFERENCE_NODE`
+- `Node.ENTITY_REFERENCE_NODE` - (5)
 
-- `Node.ENTITY_NODE`
+- `Node.ENTITY_NODE` - (6)
 
-- `Node.PROCESSING_INSTRUCTION_NODE`
+- `Node.PROCESSING_INSTRUCTION_NODE` - (7)
 
-- `Node.COMMENT_NODE`
+- `Node.COMMENT_NODE` - (8)
 
-- `Node.DOCUMENT_NODE`
+- `Node.DOCUMENT_NODE` - (9)
 
-- `Node.DOCUMENT_TYPE_NODE`
+- `Node.DOCUMENT_TYPE_NODE` - (10)
 
-- `Node.DOCUMENT_FRAGMENT_NODE`
+- `Node.DOCUMENT_FRAGMENT_NODE` - (11)
 
-- `Node.NOTATION_NODE`
+- `Node.NOTATION_NODE` - (12)
 
 由上到下，它们的数值为 1～12。
 
@@ -106,3 +106,83 @@ DOM1 级定义了一个 Node 接口，该接口由 DOM 中其他所有节点类�
     - `cloneNode()`：复制调用该方法的节点，返回其副本，该方法接受 1 个布尔值参数，为 true 则进行深复制，为 false 则进行浅复制。
 
     - `normalize()`：用于处理文本节点，该方法接受 1 个参数，该参数是将被处理的节点。
+
+### Document 类型
+
+JavaScript 通过 Document 类型表示文档。在浏览器中，document 对象是 HTMLDocument（该类型继承自 Document 类型）的一个实例，表示整个 HTML 页面。而且 document 对象也是 window 对象的属性。
+
+总结一下：
+
+```
+Document 类型
+│
+│ 继承
+│
+HTMLDocument 类型
+    │
+    │ 实例化
+    │
+    └──> document 对象（window.document）
+```
+
+Document 节点具有下列特性：
+
+- `nodeType` 的值为 9
+
+- `nodeName` 的值为 #document
+
+- `nodeValue` 的值为 null
+
+- `parentNode` 的值为 null
+
+- `ownerDocument` 的值为 null
+
+- 其子节点可能是一个 DocumentType、Element、ProcessingInstruction 或 Comment
+
+Document 类型可以表示 HTML 页面或者其他基于 XML 的文档。其最常见的应用就是作为 HTMLDocument 实例的 document 对象。
+
+1. 文档的子节点
+
+    以如下的 HTML 作为例子：
+
+    ```html
+    <html>
+      <body>
+      </body>
+    </html>
+    ```
+
+    如果要取得对 `<html>` 的引用，可以采取下列的方式：
+
+    ```js
+    var html1 = document.documentElement; // 取得 <html> 的引用
+    var html2 = document.childNodes();    // 取得 <html> 的引用
+    var html3 = document.firstChild;      // 取得 <html> 的引用
+    ```
+
+    如果要取得对 `<body>` 的引用，可以采取下列的方式：
+
+    ```js
+    var body = document.body; // 取得 <body> 的引用
+    ```
+
+    我们还可以通过 `document.doctype` 来取得对 `<!DOCTYPE>` 的引用。
+
+2. 文档信息
+
+    document 对象中还有一些属性和网页表现有关。比如 `title` 属性，我们可以通过设置这个属性的值从而修改网页的标题（标签页上的标题）：
+
+    ```js
+    document.title = 'New page title';
+    ```
+
+    document 对象中还有一些与网页请求有关的属性：`URL`、`domain` 和 `referrer`。
+
+    `URL` 属性保存着当前页面的完整 URL，`domain` 属性保存着当前页面的域名，而 `referrer` 属性保存着链接到当前页面的 URL。
+
+    ```js
+    // 例如，当前页面为 https://nodejs.org/api/modules.html，由 https://nodejs.org/api/ 链接而来
+    var url = document.url;           // https://nodejs.org/api/modules.html
+    var domain = document.domain;     // nodejs.org
+    var referrer = document.referrer; // https://nodejs.org/api/
+    ```
