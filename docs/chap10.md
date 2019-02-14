@@ -247,3 +247,15 @@ Document 类型可以表示 HTML 页面或者其他基于 XML 的文档。其最
         // 获取所有 name 属性值为 ok 的元素
         var buttons = document.getElementsByName('ok');
         ```
+
+4. 特殊集合
+
+    document 对象还有一些特殊的集合。这些集合都是 HTMLCollection 对象。
+
+    - `document.anchors`：包含文档中所有带有 `name` 属性的 `<a>` 元素
+
+    - `document.forms`：包含文档中所有的 `<form>` 元素
+
+    - `document.images`：包含文档中所有的 `<img>` 元素
+
+    - `document.links`：包含文档中所有带有 `href` 属性的 `<a>` 元素
