@@ -186,3 +186,64 @@ Document 类型可以表示 HTML 页面或者其他基于 XML 的文档。其最
     var domain = document.domain;     // nodejs.org
     var referrer = document.referrer; // https://nodejs.org/api/
     ```
+
+3. 查找元素
+
+    Document 类型提供了 2 个方法：`getElementById()` 和 `getElementsByTagName()`。HTMLDocument 类型提供了 1 个方法：`getElementsByName()`。
+
+    - `getElementById()`
+
+        该方法接收一个参数：要取得的元素的 ID，之后返回该元素。
+
+        ```html
+        <div id="mydiv">Hello World!</div>
+        ```
+
+        使用下列代码获取上述的 `<div>` 元素：
+
+        ```js
+        var div = document.getElementById('mydiv');
+        ```
+
+    - `getElementsByTagName()`
+
+        该方法接收一个参数：即要取得元素的标签名，之后返回多个元素的 NodeList。在 HTML 文档中，该方法会返回一个 HTMLCollection 对象。这个对象类似于 NodeList。
+
+        下列代码取得页面中的所有 `<img>` 元素，返回一个 HTMLCollection 对象。
+
+        ```js
+        var images = document.getElementsByTagName('img');
+        ```
+
+        访问 HTMLCollection 对象：
+
+        ```js
+        images.length;      // img 元素的数量
+        images[0].src;      // 第一个 img 元素的 src 属性
+        images.item(0).src; // 第一个 img 元素的 src 属性
+        ```
+
+        HTMLCollection 还有一个 `namedItem()` 方法，用于取得集合中特定的项。
+
+        ```html
+        <img src="myimage.jpg" name="myimage">
+        ```
+
+        ```js
+        var myImage = images.namedItem('myimage'); // 获取指定了 name 属性的 img 元素
+        ```
+
+        获取整个页面的所有元素：
+
+        ```js中
+        var allElements = document.getElementsByTagName('*'); // 返回页面中所有的元素
+        ```
+
+    - `getElementsByName()`
+
+        该方法接收一个参数：即要取得元素的 `name` 属性值，之后返回与该属性值相同的所有元素。
+
+        ```js
+        // 获取所有 name 属性值为 ok 的元素
+        var buttons = document.getElementsByName('ok');
+        ```
