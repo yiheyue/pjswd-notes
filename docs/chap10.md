@@ -331,3 +331,45 @@ console.log(div.tagName);  // DIV
 由于这两个属性返回的标签名都是大写的，所以在比较时应该注意转换大小写。比如，可以使用 `div.tagName.toLowerCase()` 方法将结果转换成小写的形式。
 
 1. HTML 元素
+
+    所有的 HTML 元素都由 HTMLElement 类型表示，该类型继承自 Element 类型。HTMLELement 类型添加了一些属性，这些属性分别对应每个 HTML 元素中都存在的标准属性：
+
+    - `id`：元素在文档中的唯一标识符
+
+    - `title`：有关元素的附加说明
+
+    - `lang`：元素内容的语言代码
+
+    - `dir`：语言的方向
+
+    - `className`：与元素的 `class` 属性对应（不直接用 class 的原因是，class 在 JavaScript 中是关键字）
+
+    所有的 HTML 元素都是由 HTMLElement 或者其更具体的子类型来表示。下表列出了所有 HTML 元素以及与之关联的类型：
+
+    | 元素 | 类型 |
+    | ---------- | ----------------------- |
+    | A          | HTMLAnchorElement       |
+    | ABBR       | HTMLElement             |
+    | ACRONYM    | HTMLElement             |
+    | ADDRESS    | HTMLElement             |
+    | AREA       | HTMLAreaElement         |
+    | B          | HTMLElement             |
+    | BASE       | HTMLBaseElement         |
+    | BDO        | HTMLElement             |
+    | BIG        | HTMLElement             |
+    | BLOCKQUOTE | HTMLQuoteElement        |
+    | BODY       | HTMLBodyElement         |
+    | BR         | HTMLBRElement           |
+    | BUTTON     | HTMLButtonElement       |
+    | Caption    | HTMLTableCaptionElement |
+    | CITE       | HTMLElement             |
+    | CODE       | HTMLElement             |
+    | COL        | HTMLTableColElement     |
+    | COLGROUP   | HTMLTableColElement     |
+    | DD         | HTMLElement             |
+    | DEL        | HTMLModElement          |
+    | DFN        | HTMLElement             |
+    | DIV        | HTMLDivElement          |
+    | DL         | HTMLDListElement        |
+    | DT         | HTMLElement             |
+    | EM         | HTMLElement             |
