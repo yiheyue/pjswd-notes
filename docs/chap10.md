@@ -373,3 +373,27 @@ console.log(div.tagName);  // DIV
     | DL         | HTMLDListElement        |
     | DT         | HTMLElement             |
     | EM         | HTMLElement             |
+    | FIELDSET   | HTMLFieldSetElement     |
+    | FORM       | HTMLFormElement         |
+    | FRAME      | HTMLFrameElement        |
+    | FRAMESET   | HTMLFrameSetElement     |
+    | H1         | HTMLHeadingElement      |
+    | H2         | HTMLHeadingElement      |
+    | H3         | HTMLHeadingElement      |
+    | H4         | HTMLHeadingElement      |
+    | H5         | HTMLHeadingElement      |
+    | H6         | HTMLHeadingElement      |
+    | HEAD       | HTMLHeadElement         |
+    | HR         | HTMLHRElement           |
+    | HTML       | HTMLHtmlElement         |
+    | I          | HTMLElement             |
+    | IFRAME     | HTMLFrameElement        |
+    | IMG        | HTMLImageElement        |
+    | INPUT      | HTMLInputElement        |
+    | INS        | HTMLModElement          |
+    | KBD        | HTMLElement             |
+    | LABEL      | HTMLLabelElement        |
+    | LEGEND     | HTMLLegendElement       |
+    | LI         | HTMLLIElement           |
+    | LINK       | HTMLLinkElement         |
+    | MAP        | HTMLMapElement          |
