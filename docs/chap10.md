@@ -259,3 +259,33 @@ Document 类型可以表示 HTML 页面或者其他基于 XML 的文档。其最
     - `document.images`：包含文档中所有的 `<img>` 元素
 
     - `document.links`：包含文档中所有带有 `href` 属性的 `<a>` 元素
+
+5. 检测浏览器对 DOM 的完成度
+
+    使用 `document.implementation` 属性可以检测浏览器对 DOM 的完成度。DOM1 级只为 `document.implementation` 提供了一个方法，即 `hasFeature()`。这个方法接收 2 个参数，第一个参数是需要检测的 DOM 功能的名称，第二个参数是相应的版本号。
+
+    ```js
+    console.log(document.implementation.hasFeature('XML', '1.0')); // true
+    ```
+
+    下表提供了更多的 DOM 功能及其版本号：
+
+    | 功能            | 版本号         | 说明                                             |
+    | -------------- | ------------- | ------------------------------------------------ |
+    | Core           | 1.0, 2.0, 3.0 | 基本的 DOM，用于描述表现文档的节点树                  |
+    | XML            | 1.0, 2.0, 3.0 | Core 的 XML 扩展，添加了对 CDATA、处理指令及实体的支持 |
+    | HTML           | 1.0, 2.0      | XML 的 HTML 扩展，添加了对 HTML 特有元素及实体的支持   |
+    | Views          | 2.0           | 基于某些样式完成文档的格式化                         |
+    | StyleSheets    | 2.0           | 将样式表关联到文档                                  |
+    | CSS            | 2.0           | 对层叠样式表 1 级的支持                             |
+    | CSS2           | 2.0           | 对层叠样式表 2 级的支持                             |
+    | Events         | 2.0, 3.0      | 常规的 DOM 事件                                   |
+    | UIEvents       | 2.0, 3.0      | 用户界面事件                                       |
+    | MouseEvents    | 2.0, 3.0      | 由鼠标引发的事件                                   |
+    | MutationEvents | 2.0, 3.0      | DOM 树变化时引发的事件                              |
+    | HTMLEvents     | 2.0           | HTML4.01事件                                     |
+    | Range          | 2.0           | 用于操作 DOM 树中某个范围的对象和方法                 |
+    | Traversal      | 2.0           | 遍历 DOM 树的方法                                  |
+    | LS             | 3.0           | 文件与 DOM 树之间的同步加载和保存                     |
+    | LS-Async       | 3.0           | 文件与 DOM 树之间的异步加载和保存                     |
+    | Validation     | 3.0           | 在确保有效的前提下修改 DOM 树的方法                   |
