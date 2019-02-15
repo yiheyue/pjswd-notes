@@ -301,3 +301,33 @@ Document 类型可以表示 HTML 页面或者其他基于 XML 的文档。其最
     - `open()`：打开网页的输入流
 
     - `close()`：关闭网页的输入流
+
+### Element 类型
+
+Element 类型用于表现 XML 和 HTML 元素，提供了对元素标签名、子节点及属性的访问。ELement 节点具有以下特征：
+
+- `nodeType` 的值为 1
+
+- `nodeName` 的值为元素的标签名
+
+- `nodeValue` 的值为 null
+
+- `parentNode` 可能是 Document 或 Element
+
+- 其子节点可能是 Element、Text、Comment、ProcessingInstruction、CDATASection 或 EntityReference
+
+要访问元素的标签名可以使用 `nodeName` 属性，也可以使用 `tagName` 属性（这两个属性返回的值相同，但是返回的标签名都是大写的）。
+
+```html
+<div id="my-div">Some text</div>
+```
+
+```js
+var div = document.getElementById('my-div');
+console.log(div.nodeName); // DIV
+console.log(div.tagName);  // DIV
+```
+
+由于这两个属性返回的标签名都是大写的，所以在比较时应该注意转换大小写。比如，可以使用 `div.tagName.toLowerCase()` 方法将结果转换成小写的形式。
+
+1. HTML 元素
