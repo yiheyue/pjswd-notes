@@ -397,3 +397,35 @@ console.log(div.tagName);  // DIV
     | LI         | HTMLLIElement           |
     | LINK       | HTMLLinkElement         |
     | MAP        | HTMLMapElement          |
+    | META       | HTMLMetaElement         |
+    | NOFRAMES   | HTMLElement             |
+    | NOSCRIPT   | HTMLElement             |
+    | OBJECT     | HTMLObjectElement       |
+    | OL         | HTMLOListElement        |
+    | OPTGROUP   | HTMLOptGroupElement     |
+    | OPTION     | HTMLOptionElement       |
+    | P          | HTMLParagraphElement    |
+    | PARAM      | HTMLParamElement        |
+    | PRE        | HTMLPreElement          |
+    | Q          | HTMLQuoteElement        |
+    | SAMP       | HTMLElement             |
+    | SCRIPT     | HTMLScriptElement       |
+    | SELECT     | HTMLSelectElement       |
+    | SMALL      | HTMLElement             |
+    | SPAN       | HTMLElement             |
+    | STRONG     | HTMLElement             |
+    | STYLE      | HTMLStyleElement        |
+    | SUB        | HTMLElement             |
+    | SUP        | HTMLElement             |
+    | TABLE      | HTMLTableElement        |
+    | TBODY      | HTMLTableSectionElement |
+    | TD         | HTMLTableCellElement    |
+    | TEXTAREA   | HTMLTextAreaElement     |
+    | TFOOT      | HTMLTableSectionElement |
+    | TH         | HTMLTableCellElement    |
+    | THEAD      | HTMLTableSectionElement |
+    | TITLE      | HTMLTitleElement        |
+    | TR         | HTMLTableRowElement     |
+    | TT         | HTMLElement             |
+    | UL         | HTMLUListElement        |
+    | VAR        | HTMLElement             |
