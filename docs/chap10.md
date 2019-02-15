@@ -429,3 +429,34 @@ console.log(div.tagName);  // DIV
     | TT         | HTMLElement             |
     | UL         | HTMLUListElement        |
     | VAR        | HTMLElement             |
+
+2. 操作 HTML 元素的属性
+
+    每个 HTML 元素都有一个或多个属性，这些属性的用途是给出相应元素或其内容的附加信息。操作 HTML 元素的属性的方法主要有 3 个：`getAttribute()`、`setAttribute()` 和 `removeAttribute()`。
+
+    - `getAttribute()`：获取 HTML 元素的属性
+
+        ```html
+        <div id="my-div" class="myDiv"></div>
+        ```
+
+        ```js
+        var div = document.getElementById('my-div');
+        var id = div.getAttribute('id');
+        var className = div.getAttribute('class');
+        console.log(id);        // my-div
+        console.log(className); // myDiv
+        ```
+
+    - `setAttribute()`：设置 HTML 元素的属性
+
+        ```js
+        div.setAttribute('class', 'my-div'); // 设置 div 元素的 class 属性值为 my-div
+        ```
+
+    - `removeAttribute()`：移除 HTML 元素的属性
+
+        ```js
+        div.removeAttribute('class');
+        console.log(div.getAttribute('class')); // null
+        ```
