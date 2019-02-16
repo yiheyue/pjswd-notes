@@ -482,3 +482,56 @@ console.log(div.tagName);  // DIV
 - `parentNode`：是一个 Element
 
 - 没有子节点
+
+可以使用下列的方法操作节点中的文本：
+
+- `appendData(text)`：将 text 添加到节点的末尾
+
+- `deleteData(offset, count)`：从 offset 位置开始删除 count 个字符
+
+- `insertData(offset, text)`：从 offset 位置开始插入 count 个字符
+
+- `replaceData(offset, count, text)`：用 text 替换从 offset 位置开始到 offset + count 结束的字符
+
+- `splitText(offset)`：从 offset 位置开始将当前文本节点分成 2 个文本节点
+
+- `substringData(offset, count)`：提取从 offset 位置开始到 offset + count 结束的字符串
+
+可以通过 `nodeValue` 和 `data` 属性访问文本节点的字符串。同时，文本节点还有一个 `length` 属性，用于保存字符串的长度。也可以访问 `nodeValue.length` 和 `data.length`，值都相等。
+
+1. 创建文本节点
+
+    使用 `document.createTextNode()` 方法来创建文本节点，类似于创建 HTML 元素，创建文本节点一般也需要 2 个步骤：
+
+    1. 新建一个文本节点（此时，该文本节点不在文档树中）：`var textNode = document.createTextNode('Hello World!');`
+
+    2. 将新建文本节点添加进文档树中：使用 `appendChild()`、`insertBefore()` 或是 `replaceChild()` 方法
+
+2. 规范化文本节点
+
+    如果 DOM 中如果存在同胞文本节点很容易导致混乱。我们可以使用 Node 类型提供的 `normalize()` 方法，将某个元素下的多个文本节点合并成一个。
+
+    ```js
+    // 假设 element 元素下有多个文本节点
+    var element = document.getElementById('my-div');
+    element.normalize();
+    ```
+
+3. 分割文本节点
+
+    Text 类型提供了一个与 `normalize()` 方法功能相反的方法：`splitText()` 方法，用于分割文本节点。
+
+    ```js
+    var element = document.createElement('div');
+    element.className = 'message';
+
+    var textNode = document.createTextNode('Hello World!');
+    element.appendChild(textNode);
+
+    document.body.appendChild(element);
+
+    var newTextNode = element.firstChild.splitText(5);
+    console.log(element.firstChild.nodeValue); // 'Hello'
+    console.log(newNodeText.nodeValue);        // ' World!'
+    console.log(element.childNodes.length);    // 2
+    ```
