@@ -460,3 +460,25 @@ console.log(div.tagName);  // DIV
         div.removeAttribute('class');
         console.log(div.getAttribute('class')); // null
         ```
+
+3. 创建 HTML 元素
+
+    使用 `document.createElement()` 方法可以创建新的 HTMl 元素。一般来说，创建新的 HTML 元素分为 2 个步骤：
+
+    1. 新建一个 HTML 元素（此时，该元素不在文档树中）：`var div = document.createElement('div');`
+
+    2. 将新建的元素添加进文档树中：使用 `appendChild()`、`insertBefore()` 或是 `replaceChild()` 方法
+
+### Text 类型
+
+文本节点由 Text 类型表示，包含的是可以照字面解释的纯文本内容。特征如下：
+
+- `nodeType`：值为 3
+
+- `nodeName`：为 #text
+
+- `nodeValue`：即文本值
+
+- `parentNode`：是一个 Element
+
+- 没有子节点
