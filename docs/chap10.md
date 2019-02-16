@@ -535,3 +535,19 @@ console.log(div.tagName);  // DIV
     console.log(newNodeText.nodeValue);        // ' World!'
     console.log(element.childNodes.length);    // 2
     ```
+
+### Comment 类型
+
+注释在 DOM 中是通过 Comment 类型来表示的，其具有以下特征：
+
+- `nodeType`：值为 8
+
+- `nodeName`：值为 #comment
+
+- `parentNode`：可能是 Document 或 Element
+
+- 没有子节点
+
+由于 Comment 类型和 Text 类型继承自相同的基类，因此它拥有除 `splitText()` 之外的所有字符串操作方法。
+
+如果要创建一个 Comment 类型的注释节点，可以使用 `document.createComment()` 方法。
