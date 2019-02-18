@@ -41,3 +41,20 @@ Selectors API Level 2 规范新增了一个方法：`matchesSelector()`。该方
 // 假设 img 元素的 CSS 选择符为 button
 img.matchesSelector('img.button'); // true
 ```
+
+## 遍历元素
+
+使用 Element Traversal API 遍历元素时可以弥补不同浏览器之间的差异。
+
+Element Traversal API 为 DOM 元素添加了以下 5 个属性：
+
+- `childElementCount`：返回子元素的个数
+
+- `firstElementChild`：指向第一个子元素
+
+- `lastElementChild`：指向最后一个子元素
+
+- `previousElementSibling`：指向上一个同胞元素
+
+- `nextElementSibling`：指向下一个同胞元素
+
