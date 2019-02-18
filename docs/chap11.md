@@ -92,3 +92,25 @@ Element Traversal API 为 DOM 元素添加了以下 5 个属性：
     // 添加 new 类
     div.classList.add('new');
     ```
+
+### 焦点管理
+
+`document.activeElement` 属性始终会引用 DOM 中当前获得了焦点的元素。元素获得焦点的方式有：页面加载、用户输入和再代码中调用 `focus()` 方法。
+
+- `focus()`：让指定元素被聚焦
+
+    ```js
+    var button = document.getElementById('myButton');
+
+    button.focus();
+    console.log(document.activeElement === button); // true
+    ```
+
+- `hasFocus()`：判断指定元素是否被聚焦
+
+    ```js
+    var button = document.getElementById('myButton');
+
+    button.focus();
+    button.hasFocus(); // true
+    ```
