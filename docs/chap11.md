@@ -58,3 +58,37 @@ Element Traversal API 为 DOM 元素添加了以下 5 个属性：
 
 - `nextElementSibling`：指向下一个同胞元素
 
+## HTML5
+
+与以往的 HTML　不同，HTML５　定义了大量的　JavaScript API，其中一些 API 与 DOM 重叠，定义了浏览器应该支持的 DOM 扩展。
+
+### 与类相关的扩充
+
+1. `getElementByClassName()` 方法
+
+    `getElementByClassName()` 方法接收一个参数，该参数是一个包含一个或多个类名的字符串。方法调用后，返回带有指定类的所有元素的 NodeList。
+
+    ```js
+    // 取得所有类中包含 current 和 username 的元素
+    var allCurrentUsernames = document.getElementByClass('current username');
+    ```
+
+2. `classList` 属性
+
+    `classList` 属性是新集合类型 DOMTokenList 的实例，其定义了以下的新方法：
+
+    - `add(value)`：将给定的字符串加入到列表中
+
+    - `contains(value)`：表示列表中是否存在给定的值，存在返回 true，否则返回 false
+
+    - `remove(value)`：从列表中删除指定的字符串
+
+    - `toggle(value)`：如果列表中已经存在给定的字符串，删除它；否则，添加它
+
+    ```js
+    // 删除 current 类
+    div.classList.remove('current');
+
+    // 添加 new 类
+    div.classList.add('new');
+    ```
