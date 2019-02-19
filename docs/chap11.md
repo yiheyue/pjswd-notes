@@ -114,3 +114,25 @@ Element Traversal API 为 DOM 元素添加了以下 5 个属性：
     button.focus();
     button.hasFocus(); // true
     ```
+
+### HTMLDocument 的变化
+
+HTML5 扩展了 HTMLDocument，增加了新的功能。
+
+- `document.readyState` 属性
+
+    这个属性有 2 个可能值：`loading` 和 `complete`。
+
+    - `loading`：正在加载文档
+
+    - `complete`：已经加载完文档
+
+- 兼容模式
+
+    在标准模式下，`document.compatMode` 的值等于 `CSS1Compat`；
+
+    在混杂模式下，`document.compatMode` 的值等于 `BackCompat`。
+
+- `document.head` 元素
+
+    这个属性是作为对 `document.body` 属性的补充。HTML5 新增了这个属性用于引用文档中的 `head` 元素。
