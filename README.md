@@ -2,7 +2,7 @@
 
 《JavaScript高级程序设计 第三版》（Professional JavaScript for Web Developers 3rd Edition）阅读笔记
 
-> 目前阅读进度：40.71%
+> 目前阅读进度：43.43%
 
 ## 目录
 
@@ -28,7 +28,7 @@
 
 11. [DOM 扩展](./docs/chap11.md)
 
-12. DOM2 和 DOM3
+12. [DOM2 和 DOM3](./docs/chap12.md)
 
 13. 事件
 
