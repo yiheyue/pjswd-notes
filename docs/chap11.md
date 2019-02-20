@@ -136,3 +136,34 @@ HTML5 扩展了 HTMLDocument，增加了新的功能。
 - `document.head` 元素
 
     这个属性是作为对 `document.body` 属性的补充。HTML5 新增了这个属性用于引用文档中的 `head` 元素。
+
+### 字符集属性
+
+HTML5 新增了几个与文档字符集有关的属性。
+
+- `document.charset`：取得文档实际使用的字符集
+
+- `document.defaultCharset`：取得浏览器的默认字符集
+
+### 自定义数据属性
+
+HTML5 规定可以为元素添加非标准的属性，但要添加前缀 `data-`。例如：
+
+```html
+<div id="my-div" data-appId="12345" data-myName="John"></div>
+```
+
+我们可以通过 `dataset` 属性来访问自定义属性的值。
+
+```js
+// 获取 div 元素
+var div = document.getElementById('my-div');
+
+// 取得 div 元素的自定义属性的值
+var appId = div.dataset.appId;
+var myName = div.dataset.myName;
+
+// 设置 div 元素的自定义属性的值
+appId = '23456';
+myName = 'Snow';
+```
