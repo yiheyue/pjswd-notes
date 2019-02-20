@@ -63,3 +63,7 @@ DOM2 Event 模块规定的事件流包括 3 个阶段：
 6. html
 7. document
 ```
+
+## 事件处理程序
+
+事件就是用户或浏览器自身执行的某种动作。如 click、load 和 mouseover，这些都是事件的名字，而响应某个事件的函数就叫做事件处理程序。事件处理程序的名字一般以 on 开头。因此，响应 click 事件的事件处理程序就是 onclick，mouseover 的事件处理程序就是 onmouseover。
