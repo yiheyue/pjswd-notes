@@ -30,7 +30,7 @@
 
 12. [DOM2 和 DOM3](./docs/chap12.md)
 
-13. 事件
+13. [事件](./docs/chap13.md)
 
 14. 表单脚本
 
