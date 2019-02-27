@@ -40,7 +40,7 @@ JSON 的语法可以表示以下 3 种类型的值：
   "age": 22,
   "hasJob": false,
   "school": {
-    "name": CU,
+    "name": "CU",
   }
 }
 ```
