@@ -44,7 +44,7 @@
 
 19. E4X
 
-20. JSON
+20. [JSON](./chap20.md)
 
 21. Ajax 与 Comet
 
