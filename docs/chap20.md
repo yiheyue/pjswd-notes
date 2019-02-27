@@ -63,3 +63,22 @@ JSON 的语法可以表示以下 3 种类型的值：
   }
 ]
 ```
+
+## JSON 相关方法
+
+- `JSON.stringify()`：将一个 JavaScript 对象序列化成一个文本
+
+    ```js
+    var book = {
+      name: 'ABC',
+      edition: 3
+    }
+
+    var jsonText = JSON.stringify(book);
+    ```
+
+- `JSON.parse()`：将一段文本解析为一个 JavaScript 对象
+
+    ```js
+    var bookCopy = JSON.parse(jsonText);
+    ```
