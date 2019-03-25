@@ -38,7 +38,7 @@
 
 16. HTML5 脚本编程
 
-17. 错误处理与调试
+17. [错误处理与调试](./docs/chap17.md)
 
 18. JavaScript 与 XML
 
